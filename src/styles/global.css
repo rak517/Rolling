@@ -1,0 +1,124 @@
+/* 글로벌 리셋 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: var(--font-family-main);
+}
+
+:root {
+  --font-family-main: "Pretendard", sans-serif;
+
+  --purple-100: #f8f0ff;
+  --purple-200: #ecd9ff;
+  --purple-300: #dcb9ff;
+  --purple-400: #c894fd;
+  --purple-500: #ab57ff;
+  --purple-600: #9935ff;
+  --purple-700: #861dee;
+  --purple-800: #6e0ad1;
+  --purple-900: #5603a7;
+
+  --beige-100: #fff0d6;
+  --beige-200: #ffe2ad;
+  --beige-300: #ffc583;
+  --beige-400: #ffae65;
+  --beige-500: #ff8832;
+
+  --blue-100: #e2f5ff;
+  --blue-200: #b1e4ff;
+  --blue-300: #7cd2ff;
+  --blue-400: #34b9ff;
+  --blue-500: #00a2fe;
+
+  --green-100: #e4fbdc;
+  --green-200: #d0f5c3;
+  --green-300: #9be282;
+  --green-400: #60cf37;
+  --green-500: #2ba600;
+
+  --gray-100: #f6f6f6;
+  --gray-200: #eeeeee;
+  --gray-300: #cccccc;
+  --gray-400: #999999;
+  --gray-500: #555555;
+  --gray-600: #4a4a4a;
+  --gray-700: #3a3a3a;
+  --gray-800: #2b2b2b;
+  --gray-900: #181818;
+
+  --white: #ffffff;
+
+  --black: #000000;
+
+  --error: #dc3a3a;
+
+  --surface: #f6f8ff;
+}
+
+/* 텍스트 유틸리티 클래스 */
+.text-2xs {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: -0.5%;
+}
+
+.text-xs {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: -0.5%;
+}
+
+.text-sm {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  letter-spacing: -1%;
+}
+
+.text-base {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  letter-spacing: -1%;
+}
+
+.text-lg {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  letter-spacing: -1%;
+}
+
+.text-xl {
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: -1%;
+}
+
+.text-2xl {
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  letter-spacing: -1%;
+}
+
+.text-3xl {
+  font-size: 2.8rem;
+  line-height: 4.2rem;
+  letter-spacing: -1%;
+}
+
+/* 폰트 유틸리티 클래스 */
+.font-regular {
+  font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 700;
+}

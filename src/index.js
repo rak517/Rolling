@@ -9,31 +9,38 @@ import CreatePage from './pages/CreatePage/CreatePage';
 import DetailPage from './pages/DetailPage/DetailPage';
 import EditPage from './pages/EditPage/EditPage';
 import SendMessagePage from './pages/SendMessagePage/SendMessagePage';
+import MainPage from './pages/MainPage/MainPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-  },
-  {
-    path: '/list',
-    element: <ListPage />,
-  },
-  {
-    path: '/post',
-    element: <CreatePage />,
-  },
-  {
-    path: '/post/:id',
-    element: <DetailPage />,
-  },
-  {
-    path: '/post/:id/edit',
-    element: <EditPage />,
-  },
-  {
-    path: '/post/:id/message',
-    element: <SendMessagePage />,
+    children: [
+      {
+        index: true,
+        element: <MainPage />,
+      },
+      {
+        path: 'list',
+        element: <ListPage />,
+      },
+      {
+        path: 'post',
+        element: <CreatePage />,
+      },
+      {
+        path: 'post/:id',
+        element: <DetailPage />,
+      },
+      {
+        path: 'post/:id/edit',
+        element: <EditPage />,
+      },
+      {
+        path: 'post/:id/message',
+        element: <SendMessagePage />,
+      },
+    ],
   },
 ]);
 

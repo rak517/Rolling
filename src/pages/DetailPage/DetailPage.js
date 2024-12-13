@@ -11,24 +11,48 @@ const DetailPageContainer = styled.div`
   width: 100%;
   height: 100vh;
   background-color: pink; // id값에 따른 색 지정?
+  overflow-y: auto; // 페이지 전체에 스크롤 추가
 `;
 
 const DetailPageCardContainer = styled.div`
   width: 120rem; // destop에서는 120px 고정
-  height: 260px;
+  height: 28rem;
   margin: 0 auto;
-  background-color: blue;
+  background-color: blue; // 임시
   position: relative;
   top: 127px;
+  display: flex;
+  gap: 2.4rem;
 
   @media (max-width: 1248px) {
     width: calc(100% - 48px);
+    height: 28.4rem;
     top: 93px;
+    gap: 1.6rem;
   }
 
   @media (max-width: 768px) {
     width: calc(100% - 48px); // 근데 피그마 시안에서는 -40 px 이던데..
     top: 32px;
+    height: 100vh;
+    flex-direction: column;
+  }
+`;
+
+const DetailPageCard = styled.div`
+  width: 38.4rem;
+  height: 28rem;
+  border-radius: 1.6rem;
+  background-color: white;
+
+  @media (max-width: 1248px) {
+    width: calc((100% - 1.6rem) / 2);
+    height: 28.4rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 23rem;
   }
 `;
 
@@ -37,7 +61,10 @@ function DetailPage() {
     <>
       <Header />
       <DetailPageContainer>
-        <DetailPageCardContainer></DetailPageCardContainer>
+        <DetailPageCardContainer>
+          <DetailPageCard></DetailPageCard>
+          <DetailPageCard></DetailPageCard>
+        </DetailPageCardContainer>
       </DetailPageContainer>
     </>
   );

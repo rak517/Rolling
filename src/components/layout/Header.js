@@ -8,6 +8,14 @@ const HeaderContainer = styled.header`
   width: 100%;
   height: 6.4rem;
   border-bottom: 1px solid #ededed;
+  // 반응형 height 작업시에 필요해서 추가 했습니다! 모바일시 삭제
+  @media (max-width: 1248px) {
+    height: 6.5rem;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const HeaderContentWrapper = styled.div`

@@ -1,40 +1,34 @@
 import styled from 'styled-components';
 import Header from '../../components/layout/Header';
-
-// id 값 받아서 추가하는 로직도 생성해야 함.
-// 모바일 규격부터 짜보기
-// 스크롤에 따른 높이는 어떻게 지정할 것인지 고민 해 보기.
-// 무한 스크롤 처리를 하되, min-height 값을 주는 방법도 좋아보임.
-// 모바일 pigma 시안보면 좌우 간격 24px을 안 지키는지? 분명 조건에는 그렇게... 뭘 따라서 ?
+import cardBtn from '../../assets/icons/cardBtn.png';
+import { Link } from 'react-router-dom';
+import React from 'react';
 
 const DetailPageContainer = styled.div`
   width: 100%;
-  height: 100vh;
-  background-color: pink; // id값에 따른 색 지정?
-  overflow-y: auto; // 페이지 전체에 스크롤 추가
+  background-color: pink;
+  overflow-y: auto;
+  padding-bottom: 200px;
+  position: relative;
+  min-height: 100vh;
 `;
 
 const DetailPageCardContainer = styled.div`
-  width: 120rem; // destop에서는 120px 고정
-  height: 28rem;
+  width: 120rem; // desktop에서는 120px 고정
   margin: 0 auto;
-  background-color: blue; // 임시
-  position: relative;
-  top: 127px;
   display: flex;
+  flex-wrap: wrap;
   gap: 2.4rem;
+  position: relative;
+  margin-top: 127px;
 
   @media (max-width: 1248px) {
-    width: calc(100% - 48px);
-    height: 28.4rem;
-    top: 93px;
+    width: calc(100% - 4.8rem);
     gap: 1.6rem;
   }
 
   @media (max-width: 768px) {
-    width: calc(100% - 48px); // 근데 피그마 시안에서는 -40 px 이던데..
-    top: 32px;
-    height: 100vh;
+    width: calc(100% - 4.8rem);
     flex-direction: column;
   }
 `;
@@ -44,6 +38,8 @@ const DetailPageCard = styled.div`
   height: 28rem;
   border-radius: 1.6rem;
   background-color: white;
+  border: none;
+  cursor: pointer;
 
   @media (max-width: 1248px) {
     width: calc((100% - 1.6rem) / 2);
@@ -56,12 +52,43 @@ const DetailPageCard = styled.div`
   }
 `;
 
+const BtnLink = styled(Link)`
+  width: 38.4rem;
+  height: 28rem;
+  border-radius: 1.6rem;
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @media (max-width: 1248px) {
+    width: calc((50% - 0.8rem));
+    height: 28.4rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 23rem;
+  }
+`;
+
+const id = 3; // 임시 처리
+
 function DetailPage() {
   return (
     <>
       <Header />
       <DetailPageContainer>
         <DetailPageCardContainer>
+          <BtnLink to={`/post/${id}/message`}>
+            <img src={cardBtn} alt="" />
+          </BtnLink>
+          <DetailPageCard></DetailPageCard>
+          <DetailPageCard></DetailPageCard>
+          <DetailPageCard></DetailPageCard>
+          <DetailPageCard></DetailPageCard>
           <DetailPageCard></DetailPageCard>
           <DetailPageCard></DetailPageCard>
         </DetailPageCardContainer>

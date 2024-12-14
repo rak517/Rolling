@@ -91,9 +91,21 @@ const ButtonBase = styled.button`
   ${({ size }) => sizeStyles[size]}
   ${({ variant }) => variantStyles[variant]}
   ${({ state }) => state === 'disabled' && stateStyles.disabled}
+
+  /* PC에서 고정 너비 */
+  width: ${({ fullWidth }) => (fullWidth ? '28rem' : 'auto')};
+
+  /* 작은 화면에서 width를 100%로 변경 */
+  @media (max-width: 1200px) {
+    ${({ fullWidth }) =>
+      fullWidth &&
+      css`
+        width: 100%;
+      `}
+  }
 `;
 
-function Button({ label, size, variant, state, className }) {
+function Button({ label, size, variant, state, className, fullWidth }) {
   console.log('size:', size);
   return (
     <ButtonBase
@@ -101,6 +113,7 @@ function Button({ label, size, variant, state, className }) {
       variant={variant}
       state={state}
       className={className}
+      fullWidth={fullWidth}
     >
       {label}
     </ButtonBase>

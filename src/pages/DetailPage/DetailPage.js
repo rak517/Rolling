@@ -3,6 +3,7 @@ import Header from '../../components/layout/Header';
 import cardBtn from '../../assets/icons/cardBtn.png';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import Button from '../../components/ui/Button';
 
 const DetailPageContainer = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const DetailPageCardContainer = styled.div`
   flex-wrap: wrap;
   gap: 2.4rem;
   position: relative;
-  margin-top: 127px;
+  margin-top: 18px;
 
   @media (max-width: 1248px) {
     width: calc(100% - 4.8rem);
@@ -52,7 +53,28 @@ const DetailPageCard = styled.div`
   }
 `;
 
-const BtnLink = styled(Link)`
+const DetailPageEditBtn = styled(Button)`
+  width: 9.2rem;
+`;
+
+const DetailPageEditBtnContainer = styled.div`
+  width: 120rem; // desktop에서는 120px 고정
+  height: 3.9;
+  margin: 6.3rem auto 0 auto;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 1248px) {
+    width: calc(100% - 4.8rem);
+    gap: 1.6rem;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 4.8rem);
+  }
+`;
+
+const DetailPageCardCreateBtn = styled(Link)`
   width: 38.4rem;
   height: 28rem;
   border-radius: 1.6rem;
@@ -76,21 +98,39 @@ const BtnLink = styled(Link)`
 
 const id = 3; // 임시 처리
 
+// 임시 카드 배열 데이터 id와 함께 api 작업 가져오면 변경
+const cardData = [
+  { id: 1, imageUrl: cardBtn },
+  { id: 2, imageUrl: cardBtn },
+  { id: 3, imageUrl: cardBtn },
+  { id: 4, imageUrl: cardBtn },
+  { id: 5, imageUrl: cardBtn },
+  { id: 6, imageUrl: cardBtn },
+  { id: 7, imageUrl: cardBtn },
+];
+
 function DetailPage() {
   return (
     <>
       <Header />
       <DetailPageContainer>
+        <DetailPageEditBtnContainer>
+          <Link to={`/post/${id}/edit`}>
+            <DetailPageEditBtn
+              size={40}
+              label="수정하기"
+              variant="primary"
+              fullWidth={92}
+            />
+          </Link>
+        </DetailPageEditBtnContainer>
         <DetailPageCardContainer>
-          <BtnLink to={`/post/${id}/message`}>
+          <DetailPageCardCreateBtn to={`/post/${id}/message`}>
             <img src={cardBtn} alt="" />
-          </BtnLink>
-          <DetailPageCard></DetailPageCard>
-          <DetailPageCard></DetailPageCard>
-          <DetailPageCard></DetailPageCard>
-          <DetailPageCard></DetailPageCard>
-          <DetailPageCard></DetailPageCard>
-          <DetailPageCard></DetailPageCard>
+          </DetailPageCardCreateBtn>
+          {cardData.map((card) => (
+            <DetailPageCard key={card.id}></DetailPageCard>
+          ))}
         </DetailPageCardContainer>
       </DetailPageContainer>
     </>

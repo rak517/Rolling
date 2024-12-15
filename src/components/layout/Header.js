@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
   }
 
   @media (max-width: 768px) {
-    display: none;
+    display: ${({ visibleOnMobile }) => (visibleOnMobile ? 'block' : 'none')};
   }
 `;
 
@@ -42,20 +42,22 @@ const LogoLink = styled(Link)`
   text-decoration: none;
 `;
 
-function Header({ showButton }) {
+function Header({ showButton, visibleOnMobile }) {
   return (
-    <HeaderContainer>
+    <HeaderContainer visibleOnMobile={visibleOnMobile}>
       <HeaderContentWrapper>
         <LogoLink to="/">
           <Logo src={logo} alt="Rolling Logo" />
         </LogoLink>
         {showButton && (
-          <Button
-            label="롤링 페이퍼 만들기"
-            size={40}
-            variant="outlined"
-            className="text-base"
-          />
+          <LogoLink to="/post">
+            <Button
+              label="롤링 페이퍼 만들기"
+              size={40}
+              variant="outlined"
+              className="text-base"
+            />
+          </LogoLink>
         )}
       </HeaderContentWrapper>
     </HeaderContainer>

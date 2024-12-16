@@ -32,7 +32,7 @@ const MoreProfiles = styled.div`
   margin-left: -1rem;
 `;
 
-function ProfileImages({ recentMessages, backgroundImageURL }) {
+function ProfileImages({ recentMessages = [], backgroundImageURL }) {
   const maxVisibleProfiles = 3;
   const visibleProfiles = recentMessages.slice(0, maxVisibleProfiles);
   const remainingProfiles = recentMessages.length - maxVisibleProfiles;

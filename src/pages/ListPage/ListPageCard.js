@@ -5,11 +5,13 @@ import Reactions from '../../components/common/Reactions';
 const Card = styled.div`
   position: relative; /* 오버레이 겹치기 위해 */
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   padding: 3rem 2.4rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.12);
   border-radius: 1.6rem;
   width: 27.5rem;
+  height: 26rem;
   overflow: hidden;
 
   /* 배경 이미지와 색상 설정 */

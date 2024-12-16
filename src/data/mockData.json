@@ -1,0 +1,326 @@
+[
+  {
+    "id": 11,
+    "name": "최성락1",
+    "backgroundColor": "green",
+    "backgroundImageURL": "https://s3-alpha-sig.figma.com/img/20c6/e481/31612bf263d24dd830adf62fd00509ed?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=frJ5~XixhYls1hSAd-iBR1C3xSdEsm99C8MQW1gMlH0T7OrySXoPjMUUom2yoaN1sqFUTvvSaqPmAo6PfnueNJHWxUTX0-5bLumdB69nqNVKfjKMWuKFMP4obXLBCT-GsnPACcVZtRO3tSHBG-hA7op3Ft-Ps6ORvqNwVActxeNCuJBjEDNeZY5TBMXEQm8bZeUvuTji8PX6L4WjF5GO92ftiuvDbcAAzM9hiTkZ~--FFex1IoEB86IJU6oSXEQ5o9xK8sHG5SlnBarO-yge6Z0u-v1dSYMTXKAAYpFPfIUCdKmMpdTNLJrA-e0inMjdvw0oR-29Rq28ZCV6BwiUDw__",
+    "createdAt": "2023-10-31T09:58:37.631384Z",
+    "messageCount": 6,
+    "recentMessages": [
+      {
+        "id": 28,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:47.272896Z"
+      },
+      {
+        "id": 27,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 29,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 30,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      }
+    ],
+    "reactionCount": 23,
+    "topReactions": [
+      {
+        "id": 24,
+        "emoji": "😀",
+        "count": 15
+      },
+      {
+        "id": 25,
+        "emoji": "🥹",
+        "count": 8
+      },
+      {
+        "id": 25,
+        "emoji": "🐼",
+        "count": 49
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "최성락2",
+    "backgroundColor": "purple",
+    "backgroundImageURL": null,
+    "createdAt": "2023-10-31T09:58:37.631384Z",
+    "messageCount": 6,
+    "recentMessages": [
+      {
+        "id": 28,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:47.272896Z"
+      },
+      {
+        "id": 27,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 29,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 30,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      }
+    ],
+    "reactionCount": 23,
+    "topReactions": [
+      {
+        "id": 24,
+        "emoji": "😀",
+        "count": 15
+      },
+      {
+        "id": 25,
+        "emoji": "🥹",
+        "count": 8
+      },
+      {
+        "id": 25,
+        "emoji": "🐼",
+        "count": 49
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "최성락3",
+    "backgroundColor": "beige",
+    "backgroundImageURL": null,
+    "createdAt": "2023-10-31T09:58:37.631384Z",
+    "messageCount": 6,
+    "recentMessages": [
+      {
+        "id": 28,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:47.272896Z"
+      },
+      {
+        "id": 27,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 29,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 30,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      }
+    ],
+    "reactionCount": 23,
+    "topReactions": [
+      {
+        "id": 24,
+        "emoji": "😀",
+        "count": 15
+      },
+      {
+        "id": 25,
+        "emoji": "🥹",
+        "count": 8
+      },
+      {
+        "id": 25,
+        "emoji": "🐼",
+        "count": 49
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "최성락4",
+    "backgroundColor": "blue",
+    "backgroundImageURL": null,
+    "createdAt": "2023-10-31T09:58:37.631384Z",
+    "messageCount": 6,
+    "recentMessages": [
+      {
+        "id": 28,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:47.272896Z"
+      },
+      {
+        "id": 27,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 29,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      },
+      {
+        "id": 30,
+        "recipientId": 11,
+        "sender": "test user2",
+        "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        "relationship": "지인",
+        "content": "테스트 목적의 메세지3",
+        "font": "나눔명조",
+        "createdAt": "2023-10-31T09:58:46.889479Z"
+      }
+    ],
+    "reactionCount": 23,
+    "topReactions": [
+      {
+        "id": 24,
+        "emoji": "😀",
+        "count": 15
+      },
+      {
+        "id": 25,
+        "emoji": "🥹",
+        "count": 8
+      },
+      {
+        "id": 25,
+        "emoji": "🐼",
+        "count": 49
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "최성락5",
+    "backgroundColor": "green",
+    "backgroundImageURL": "https://source.unsplash.com/random/800x600?mountain,3",
+    "createdAt": "2023-11-04T08:30:37.631384Z",
+    "messageCount": 9,
+    "topReactions": [
+      { "id": 36, "emoji": "🌟", "count": 20 },
+      { "id": 37, "emoji": "😍", "count": 14 },
+      { "id": 38, "emoji": "😂", "count": 10 }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "최성락6",
+    "backgroundColor": "purple",
+    "backgroundImageURL": null,
+    "createdAt": "2023-11-05T07:45:37.631384Z",
+    "messageCount": 15,
+    "topReactions": [
+      { "id": 39, "emoji": "👍", "count": 30 },
+      { "id": 40, "emoji": "🔥", "count": 12 },
+      { "id": 41, "emoji": "🎶", "count": 18 }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "최성락7",
+    "backgroundColor": "blue",
+    "backgroundImageURL": "https://source.unsplash.com/random/800x600?sky,4",
+    "createdAt": "2023-11-06T12:30:37.631384Z",
+    "messageCount": 7,
+    "topReactions": [
+      { "id": 42, "emoji": "🎁", "count": 22 },
+      { "id": 43, "emoji": "😜", "count": 17 },
+      { "id": 44, "emoji": "🙌", "count": 14 }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "최성락8",
+    "backgroundColor": "beige",
+    "backgroundImageURL": null,
+    "createdAt": "2023-11-07T13:58:37.631384Z",
+    "messageCount": 5,
+    "topReactions": [
+      { "id": 45, "emoji": "😎", "count": 11 },
+      { "id": 46, "emoji": "🥳", "count": 9 },
+      { "id": 47, "emoji": "🤩", "count": 8 }
+    ]
+  }
+]

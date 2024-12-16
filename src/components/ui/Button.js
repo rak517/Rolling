@@ -106,7 +106,6 @@ const ButtonBase = styled.button`
 `;
 
 function Button({ label, size, variant, state, className, fullWidth }) {
-  console.log('size:', size);
   return (
     <ButtonBase
       size={size}

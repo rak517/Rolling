@@ -45,6 +45,7 @@
     "swiper": "^11.1.15"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@vercel/style-guide": "^6.0.0",

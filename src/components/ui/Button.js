@@ -104,8 +104,16 @@ const ButtonBase = styled.button`
       `}
   }
 `;
-
-function Button({ label, size, variant, state, className, fullWidth }) {
+// ...rest 추가 - 이벤트 핸들러를 위해 추가했습니다.
+function Button({
+  label,
+  size,
+  variant,
+  state,
+  className,
+  fullWidth,
+  ...rest
+}) {
   return (
     <ButtonBase
       size={size}
@@ -113,6 +121,7 @@ function Button({ label, size, variant, state, className, fullWidth }) {
       state={state}
       className={className}
       fullWidth={fullWidth}
+      {...rest}
     >
       {label}
     </ButtonBase>

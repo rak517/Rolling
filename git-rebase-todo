@@ -1,0 +1,106 @@
+pick 76034f9 Initial commit
+pick c56a48b chore(init): 초기 환경 설정 완료
+pick cc8730e feat: 초기 라우팅 설정 추가
+pick 1ebd63b style: 글로벌 스타일 초기화 및 유틸리티 클래스 추가
+pick e1bf889 chore: index.html 정리 (주석 및 필요 없는 문장 제거)
+pick 5c5906d chore: styled-components 패키지 설치
+pick 1afce34 refactor: 라우터 구조 개선
+pick 048dd16 refactor: components 폴더 구조 수정 및 빈 폴더 추적 파일 추가
+pick bffedf9 feat: 공통 컴포넌트(Header, Button) 구현
+edit 66f2ae6 feat: header.js 반응형 추가
+edit 3d98c88 feat: detailPage.js의 기본뼈대 생성
+pick a02a772 feat: 배경색상선택페이지 UI 구성
+pick 69b8f9c createpage 컴포넌트와 css스타일 섹션별 파일 분리 및 재구조화
+pick 16dfeb4 conflict를 없애기 위한 파일입니다.
+pick de03975 React 컴포넌트 로직 및 CSS스타일 SCSS에서 styled-components로 변경
+pick 93500e1 feat: 메인 페이지 랜딩 화면 및 링크 기능 구현
+edit f320488 feat: detailPage의 버튼 기능구현, 스크롤 기능 구현, 반응형에 따른 카드배치
+pick b0952d2 feat: listPage UI 구현
+pick 043c45c chore: swiper 라이브러리 추가
+pick d18a2e0 feat: listPage Carousel 구현, 반응형 처리
+edit b13a0fc feat: detailpage의 수정하기 버튼 추가
+edit ee924fe feat: detailPage의 Component화
+edit 66a6c54 feat: 관계 UI 컴포넌트화
+edit 3466b3b refactor: modal.js의 컴포넌트 스타일 분리
+edit 1a44988 feat: detailPage.style.js의 반응형 작업
+pick a5796b6 chore: swiper 라이브러리 의존성 제거
+pick bc06d25 refactor: 롤링페이퍼 목록 페이지 반응형 Carousel 라이브러리 없이 직접 구현-#17
+pick 7fb9e10 chore: 환경 변수 설정을 위한 env.example 추가
+pick bd2b66e refactor: list-page에서 카드 클릭시 /post/{id}로 이동하게 수정
+pick fd7f6b8 refactor: button 공통 컴포넌트 수정
+pick 81f1593 feat: detailPage(/post)의 MessageStatusBar UI 구현
+pick 4fe45ce fix: 병합 충돌 해결 (dev 브랜치와 병합)
+pick 2e58b66 chore: 이모지 선택을 위한 emoji-picker-react 라이브러리 추가
+pick 748067d feat: 이모지 선택 창 추가
+pick 3583832 feat: 공유하기 드롭다운 메뉴 추가
+pick 53cb609 feat: listPage API 연동 및 데이터 표시 구현
+pick 40dae8c feat: messageStatusBar API 연동, topReactions, 모든 이모지 렌더링 및 이모지 추가 기능 구현
+pick 9156583 feat: messageStatusBar 카카오톡 공유, URL 공유 기능 추가
+pick 8f4d823 fix: 카카오 SDK 초기화 오류 방지를 위해 index.html에서 직접 로드
+pick 5a38ae8 배경 색상 및 이미지 선택 UI 구현
+pick 2b4c7da fix: module not found 에러 해결
+pick 2d89c3f 오류 수정을 위한 각 파일  경로 변경
+pick effaf18 feat: SendMessagePage UI 및 Components 구현
+edit 298762b feat: detailPage의 api 연동 및 테스트 데이터추가
+edit 7261b17 feat: editPage 파일구조 생성 및 editBtn UI 생성
+edit a8091de feat: editPage 메세지 삭제버튼기능 구현
+edit 1da80c6 feat: editPage 롤링페이퍼 삭제기능구현
+edit ed58c21 feat: api 작업완료
+pick 1e91717 feat: url 공유 및 이모지 추가 시 토스트 알림 구현 #36
+pick 178fef1 fix: create-page 오류 수정
+pick d37004f refactor: 메인 이미지 수정
+pick ac9d56f refactor: list-page의 Carousel 반응형 드래그 수정
+pick c93c613 refactor: message-status-bar 반응형 UI 및 이모지 드롭다운 기능 수정
+edit 2ec733a fix: card 렌더딩 수정/api 메세지 조회기능추가
+edit 3d2e23b fix: editPage의 카드 렌더링도 수정
+edit b68d588 fix: modal 반응형 수정
+edit 6940d2a fix: send-message-page 오류 임시 처리
+edit 9ececdd fix: create-api추가-생성하기 기능 확인
+edit addc9fb fix: image-card grid-> flex
+edit 6db49df refactor: readme-setting
+pick b006b7d Jsx파일 js파일로 수정
+edit 3e84d37 refactor: readme-gif추가
+edit e33daec feat: header 공용 컴포넌트로 교체
+edit 0545087 refactor: readme.md 경로수정
+edit bfabefc feat: createMessage 기능구현
+edit 87c50f4 refactor: img 오류 해결
+edit ac7e4aa refactor: img 중복제거 4가지로
+edit 8b6afa0 refactor: img 적용이 안되던 문제 해결
+edit 104b750 refactor: message-img-추가
+pick 559847e refactor: detail-page styled 수정 및 favicon 추가
+pick ba8eb0e refactor: background 이미지 옵션 수정
+edit 49a6ff3 refactor: readme.md gif추가 및 컨베션 내용추가
+edit fccc040 fix: createRolling 이미지 오류 해결
+edit ea3c757 refactor: readme 배포 링크추가
+edit 86fc450 refactor: img 해상도 1920x1080 변경
+
+
+                 opens the editor
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified); use -c <commit> to reword the commit message
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# You are editing the todo file of an ongoing interactive rebase.
+# To continue rebase after editing, run:
+#     git rebase --continue
+#

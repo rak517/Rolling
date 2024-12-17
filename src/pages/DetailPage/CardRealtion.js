@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// 관계에 따라 스타일을 동적으로 변경
 export const CardRelation = styled.div`
   width: 100%;
   height: 100%;

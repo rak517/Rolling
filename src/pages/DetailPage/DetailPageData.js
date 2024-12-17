@@ -2,6 +2,7 @@
 export const id = 3; // 임시 처리
 
 export const cardData = [
+  // 테스트 용입니다
   {
     id: 1,
     relation: '친구',

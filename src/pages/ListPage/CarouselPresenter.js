@@ -1,6 +1,4 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import styled from 'styled-components';
 import ListPageCard from './ListPageCard';
 import CarouselButton from '../../components/common/CarouselButton';
 import {
@@ -8,8 +6,34 @@ import {
   CarouselInnerWrapper,
   CardsContainer,
 } from './ListPage.styles';
+import CarouselContainer from './CarouselContainer';
 
-function ResponsiveCarousel({
+const MobileScrollContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  cursor: grab;
+  &.grabbing {
+    cursor: grabbing;
+  }
+`;
+
+const SlideWrapper = styled.div`
+  flex: 0 0 auto;
+  width: 27.5rem;
+  height: 26rem;
+  overflow: hidden;
+`;
+
+function CarouselPresenter({
   data,
   isMobile,
   currentIndex,
@@ -17,25 +41,29 @@ function ResponsiveCarousel({
   handleNext,
   maxIndex,
   cardsToShow,
+  containerRef,
+  onMouseDown,
+  onMouseLeave,
+  onMouseUp,
+  onMouseMove,
 }) {
   if (isMobile) {
-    const slideStyle = {
-      width: '275px',
-      height: '260px',
-      overflow: 'hidden',
-    };
-
     return (
-      <Swiper spaceBetween={20} slidesPerView="auto" grabCursor={true}>
+      <MobileScrollContainer
+        ref={containerRef}
+        onMouseDown={onMouseDown}
+        onMouseLeave={onMouseLeave}
+        onMouseUp={onMouseUp}
+        onMouseMove={onMouseMove}
+      >
         {data.map((item) => (
-          <SwiperSlide key={item.id} style={slideStyle}>
+          <SlideWrapper key={item.id}>
             <ListPageCard data={item} />
-          </SwiperSlide>
+          </SlideWrapper>
         ))}
-      </Swiper>
+      </MobileScrollContainer>
     );
   }
-
   // 데스크톱일 경우
   return (
     <CarouselOuterWrapper>
@@ -60,4 +88,4 @@ function ResponsiveCarousel({
   );
 }
 
-export default ResponsiveCarousel;
+export default CarouselPresenter;

@@ -10,7 +10,7 @@ import {
   ListSection,
   StyledLink,
 } from './ListPage.styles';
-import ResponsiveCarousel from './ResponsiveCarousel';
+import CarouselContainer from './CarouselContainer';
 
 function ListPage() {
   const cardsToShow = 4;
@@ -39,7 +39,7 @@ function ListPage() {
         <SectionWrapper>
           <h2 className="text-xl font-bold">인기 롤링 페이퍼 🔥</h2>
           <ListSection>
-            <ResponsiveCarousel
+            <CarouselContainer
               data={mockData}
               isMobile={isMobile}
               currentIndex={currentIndexTop}
@@ -54,7 +54,7 @@ function ListPage() {
         <SectionWrapper>
           <h2 className="text-xl font-bold">최근에 만든 롤링 페이퍼 ⭐️️</h2>
           <ListSection>
-            <ResponsiveCarousel
+            <CarouselContainer
               data={mockData}
               isMobile={isMobile}
               currentIndex={currentIndexBottom}

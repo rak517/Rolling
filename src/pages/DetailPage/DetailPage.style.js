@@ -133,6 +133,13 @@ export const DetailPageCardTextContainer = styled.div`
   margin: 0 auto;
   overflow: hidden; // 넘치는 내용 숨기기
   text-overflow: ellipsis; // 넘치는 글자를 '...'으로 표시
+  @media (max-width: 1248px) {
+    width: calc(100% - 4.8rem);
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 4.8rem);
+  }
 `;
 
 export const DetailPageCardText = styled.div`
@@ -140,6 +147,24 @@ export const DetailPageCardText = styled.div`
   height: 10.6rem;
   margin-top: 1.6rem;
   color: #4a4a4a;
+
+  @media (max-width: 1248px) {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  p {
+    @media (max-width: 1248px) {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
 `;
 
 export const DetailPageCardDate = styled.div`
@@ -147,6 +172,10 @@ export const DetailPageCardDate = styled.div`
   height: 1.8rem;
   margin-left: 2.4rem;
   color: var(--gray-400);
+
+  @media (max-width: 768px) {
+    margin-bottom: 2.4rem;
+  }
 `;
 
 export const DetailPageCardProfileWhoFrom = styled.div`

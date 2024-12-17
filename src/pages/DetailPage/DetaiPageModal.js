@@ -15,7 +15,7 @@ import {
   ModalContentHeaderProfileFromNameFirst,
   ModalContentHeaderProfileFromNameId,
   ModalContentText,
-} from './Modal.style';
+} from './DetailPageModal.style';
 
 import Realtion from './CardRealtion';
 // 네이밍 부분이 너무 길어지네요 ㅜㅜ BEM처럼 네이밍을 하고싶은데 StyledCompnet이다보니

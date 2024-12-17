@@ -41,8 +41,7 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
-    "styled-components": "^6.1.13",
-    "swiper": "^11.1.15"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

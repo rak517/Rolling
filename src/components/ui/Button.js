@@ -1,3 +1,4 @@
+import { Children } from 'react';
 import styled, { css } from 'styled-components';
 
 const sizeStyles = {
@@ -104,9 +105,9 @@ const ButtonBase = styled.button`
       `}
   }
 `;
-// ...rest 추가 - 이벤트 핸들러를 위해 추가했습니다.
+
 function Button({
-  label,
+  children,
   size,
   variant,
   state,
@@ -123,7 +124,7 @@ function Button({
       fullWidth={fullWidth}
       {...rest}
     >
-      {label}
+      {children}
     </ButtonBase>
   );
 }

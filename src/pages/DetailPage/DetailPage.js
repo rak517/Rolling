@@ -9,6 +9,7 @@ import {
   DetailPageCardContainer,
   DetailPageEditBtnContainer,
 } from './DetailPage.style';
+import MessageStatusBarContainer from '../../components/layout/MessageStatusBar/MessageStatusBarContainer';
 
 function DetailPage() {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -22,6 +23,7 @@ function DetailPage() {
   return (
     <>
       <Header />
+      <MessageStatusBarContainer />
       <DetailPageContainer>
         <DetailPageEditBtnContainer>
           <DetailPageEditButton />

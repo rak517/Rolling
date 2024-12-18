@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import ProfileImages from '../../components/common/ProfileImages';
 import Reactions from '../../components/common/Reactions';
+import { Link } from 'react-router-dom';
 
 const Card = styled.div`
   position: relative; /* 오버레이 겹치기 위해 */
@@ -13,6 +14,7 @@ const Card = styled.div`
   width: 27.5rem;
   height: 26rem;
   overflow: hidden;
+  cursor: pointer;
 
   /* 배경 이미지와 색상 설정 */
   background-color: ${(props) =>
@@ -82,36 +84,45 @@ const MessageCount = styled.p`
   z-index: 0;
 `;
 
+const StyledLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+`;
+
 const EmojiSection = styled.div``;
 
 function ListPageCard({ data }) {
   return (
-    <Card
-      $backgroundColor={data.backgroundColor}
-      $backgroundImageURL={data.backgroundImageURL}
-    >
-      <CardWrapper>
-        <CardTitle
-          className="text-2xl font-bold"
-          $backgroundImageURL={data.backgroundImageURL}
-        >
-          To. {data.name}
-        </CardTitle>
-        <ProfileImages
-          recentMessages={data.recentMessages}
-          $backgroundImageURL={data.backgroundImageURL}
-        />
-        <MessageCount
-          className="text-base"
-          $backgroundImageURL={data.backgroundImageURL}
-        >
-          <strong>{data.messageCount}</strong>명이 작성했어요!
-        </MessageCount>
-      </CardWrapper>
-      <EmojiSection>
-        <Reactions topReactions={data.topReactions}></Reactions>
-      </EmojiSection>
-    </Card>
+    <StyledLink to={`/post/${data.id}`}>
+      <Card
+        $backgroundColor={data.backgroundColor}
+        $backgroundImageURL={data.backgroundImageURL}
+      >
+        <CardWrapper>
+          <CardTitle
+            className="text-2xl font-bold"
+            $backgroundImageURL={data.backgroundImageURL}
+          >
+            To. {data.name}
+          </CardTitle>
+          <ProfileImages
+            recentMessages={data.recentMessages}
+            $backgroundImageURL={data.backgroundImageURL}
+          />
+          <MessageCount
+            className="text-base"
+            $backgroundImageURL={data.backgroundImageURL}
+          >
+            <strong>{data.messageCount}</strong>명이 작성했어요!
+          </MessageCount>
+        </CardWrapper>
+        <EmojiSection>
+          <Reactions topReactions={data.topReactions}></Reactions>
+        </EmojiSection>
+      </Card>
+    </StyledLink>
   );
 }
 

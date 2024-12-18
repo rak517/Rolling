@@ -1,5 +1,3 @@
-styled배경색상 페이지
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -103,7 +101,8 @@ const ColorBox = styled.div`
   height: 168px;
   border-radius: 16px;
   position: relative;
-  border: ${(props) => (props.selected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)')};
+  border: ${(props) =>
+    props.selected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)'};
   cursor: pointer;
   background-color: ${(props) => props.color};
 `;
@@ -192,7 +191,9 @@ const CreateColorPage = () => {
 
       <BackgroundSection>
         <BackgroundHeading>배경화면을 선택해 주세요.</BackgroundHeading>
-        <BackgroundDescription>컬러를 선택하거나, 이미지를 선택할 수 있습니다.</BackgroundDescription>
+        <BackgroundDescription>
+          컬러를 선택하거나, 이미지를 선택할 수 있습니다.
+        </BackgroundDescription>
         <ToggleSection>
           <ToggleButton active>컬러</ToggleButton>
           <ToggleButton>이미지</ToggleButton>
@@ -205,7 +206,9 @@ const CreateColorPage = () => {
               selected={selectedColor === option.color}
               onClick={() => setSelectedColor(option.color)}
             >
-              {selectedColor === option.color && <CheckmarkOverlay>✔</CheckmarkOverlay>}
+              {selectedColor === option.color && (
+                <CheckmarkOverlay>✔</CheckmarkOverlay>
+              )}
             </ColorBox>
           ))}
         </ColorOptions>

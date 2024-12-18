@@ -51,12 +51,9 @@ function Header({ showButton, visibleOnMobile }) {
         </LogoLink>
         {showButton && (
           <LogoLink to="/post">
-            <Button
-              label="롤링 페이퍼 만들기"
-              size={40}
-              variant="outlined"
-              className="text-base"
-            />
+            <Button size={40} variant="outlined" className="text-base">
+              롤링 페이퍼 만들기
+            </Button>
           </LogoLink>
         )}
       </HeaderContentWrapper>

@@ -34,12 +34,13 @@ function MainPage() {
         <EmojiIntro />
         <StyledLink to="/list">
           <Button
-            label="구경해보기"
             size={56}
             variant="primary"
             fullWidth={true}
             className="text-lg"
-          ></Button>
+          >
+            구경해보기
+          </Button>
         </StyledLink>
       </MainWrapper>
     </>

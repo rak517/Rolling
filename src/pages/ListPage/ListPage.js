@@ -68,12 +68,13 @@ function ListPage() {
       </PageContainer>
       <StyledLink to="/post">
         <Button
-          label="나도 만들어보기"
           size={56}
           variant="primary"
           fullWidth={true}
           className="text-lg"
-        />
+        >
+          나도 만들어보기
+        </Button>
       </StyledLink>
     </>
   );

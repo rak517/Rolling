@@ -5,9 +5,14 @@ import { useState } from 'react';
 function MessageStatusBarContainer() {
   const firstData = mockData[0];
   const [isEmojiPickerVisible, setEmojiPickerVisible] = useState(false);
+  const [isShareDropdownVisible, setShareDropdownVisible] = useState(false);
 
   const toggleEmojiPicker = () => {
     setEmojiPickerVisible((prev) => !prev);
+  };
+
+  const toggleShareDropdown = () => {
+    setShareDropdownVisible((prev) => !prev);
   };
 
   const handleEmojiClick = (event, emojiObject) => {
@@ -20,6 +25,8 @@ function MessageStatusBarContainer() {
       isEmojiPickerVisible={isEmojiPickerVisible}
       toggleEmojiPicker={toggleEmojiPicker}
       onEmojiClick={handleEmojiClick}
+      isShareDropdownVisible={isShareDropdownVisible}
+      toggleShareDropdown={toggleShareDropdown}
     />
   );
 }

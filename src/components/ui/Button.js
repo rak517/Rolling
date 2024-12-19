@@ -1,3 +1,4 @@
+import { Children } from 'react';
 import styled, { css } from 'styled-components';
 
 const sizeStyles = {
@@ -91,18 +92,39 @@ const ButtonBase = styled.button`
   ${({ size }) => sizeStyles[size]}
   ${({ variant }) => variantStyles[variant]}
   ${({ state }) => state === 'disabled' && stateStyles.disabled}
+
+  /* PC에서 고정 너비 */
+  width: ${({ fullWidth }) => (fullWidth ? '28rem' : 'auto')};
+
+  /* 작은 화면에서 width를 100%로 변경 */
+  @media (max-width: 1200px) {
+    ${({ fullWidth }) =>
+      fullWidth &&
+      css`
+        width: 100%;
+      `}
+  }
 `;
 
-function Button({ label, size, variant, state, className }) {
-  console.log('size:', size);
+function Button({
+  children,
+  size,
+  variant,
+  state,
+  className,
+  fullWidth,
+  ...rest
+}) {
   return (
     <ButtonBase
       size={size}
       variant={variant}
       state={state}
       className={className}
+      fullWidth={fullWidth}
+      {...rest}
     >
-      {label}
+      {children}
     </ButtonBase>
   );
 }

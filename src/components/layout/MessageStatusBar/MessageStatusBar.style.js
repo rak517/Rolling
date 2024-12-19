@@ -15,6 +15,7 @@ export const StatusBarContainer = styled.div`
 `;
 
 export const StatusBarWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -116,4 +117,12 @@ export const ButtonWrapper = styled.div`
     background-color: var(--gray-200);
     margin-left: 0.8rem;
   }
+`;
+
+export const EmojiSelector = styled.div`
+  position: absolute;
+  top: 4.6rem;
+  right: 9rem;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 `;

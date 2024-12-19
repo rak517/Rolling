@@ -15,6 +15,7 @@ export const StatusBarContainer = styled.div`
 `;
 
 export const StatusBarWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,5 +116,40 @@ export const ButtonWrapper = styled.div`
     height: 2.8rem;
     background-color: var(--gray-200);
     margin-left: 0.8rem;
+  }
+`;
+
+export const EmojiSelector = styled.div`
+  position: absolute;
+  top: 4.6rem;
+  right: 9rem;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+`;
+
+export const ShareDropdownMenu = styled.div`
+  position: absolute;
+  top: 4.6rem;
+  right: 0rem;
+  padding: 1rem 0.1rem;
+  background-color: var(--white);
+  border-radius: 0.8rem;
+  color: var(--gray-900);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 1.2rem 1.6rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--gray-100);
+      }
+    }
   }
 `;

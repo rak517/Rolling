@@ -1,3 +1,4 @@
+import EmojiPicker from 'emoji-picker-react';
 import {
   StatusBarContainer,
   StatusBarWrapper,
@@ -10,6 +11,8 @@ import {
   MessageCount,
   EmojiDropDown,
   ButtonWrapper,
+  EmojiSelector,
+  ShareDropdownMenu,
 } from './MessageStatusBar.style';
 import ProfileImages from '../../common/ProfileImages';
 import Reactions from '../../common/Reactions';
@@ -18,7 +21,14 @@ import Button from '../../ui/Button';
 import buttonIcon from '../../../assets/icons/button-icon.svg';
 import shareButton from '../../../assets/icons/share-button.svg';
 
-function MessageStatusBarPresenter({ data }) {
+function MessageStatusBarPresenter({
+  data,
+  isEmojiPickerVisible,
+  toggleEmojiPicker,
+  onEmojiClick,
+  isShareDropdownVisible,
+  toggleShareDropdown,
+}) {
   return (
     <StatusBarContainer>
       <StatusBarWrapper>
@@ -40,16 +50,38 @@ function MessageStatusBarPresenter({ data }) {
               <img src={errow_down} alt="이모지 드롭다운" />
             </ReactionsWrapper>
             <ButtonWrapper>
-              <Button size="36" variant="outlined" className="text-base">
+              <Button
+                size="36"
+                variant="outlined"
+                className="text-base"
+                onClick={toggleEmojiPicker}
+              >
                 <EmojiDropDown src={buttonIcon} alt="추가 버튼" />
                 추가
               </Button>
             </ButtonWrapper>
-            <Button size="36" variant="outlined">
+            <Button size="36" variant="outlined" onClick={toggleShareDropdown}>
               <img src={shareButton} alt="공유 버튼" />
             </Button>
           </StatusBarSectionWrapperRight>
         </StatusBarSection>
+
+        {/* 이모지 선택 창 */}
+        {isEmojiPickerVisible && (
+          <EmojiSelector>
+            <EmojiPicker onEmojiClick={onEmojiClick} />
+          </EmojiSelector>
+        )}
+
+        {/* 공유 드롭다운 메뉴 */}
+        {isShareDropdownVisible && (
+          <ShareDropdownMenu className="text-base">
+            <ul>
+              <li>카카오톡 공유</li>
+              <li>URL 공유</li>
+            </ul>
+          </ShareDropdownMenu>
+        )}
       </StatusBarWrapper>
     </StatusBarContainer>
   );

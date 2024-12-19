@@ -1,9 +1,7 @@
-
-//배경 색상 선택 컴포넌트
-
+//배경색상선택 컴포넌트 로직 코드
 
 import React from 'react';
-import styles from './BackgroundSection.module.scss';
+import { Container, Heading, ColorOptions, ColorBox } from './BackgroundSection.styled';
 
 const BackgroundSection = ({ selectedColor, setSelectedColor }) => {
   const colorOptions = [
@@ -14,19 +12,19 @@ const BackgroundSection = ({ selectedColor, setSelectedColor }) => {
   ];
 
   return (
-    <div className={styles.container}>
-      <h3 className={styles.heading}>배경화면을 선택해 주세요.</h3>
-      <div className={styles.colorOptions}>
+    <Container>
+      <Heading>배경화면을 선택해 주세요.</Heading>
+      <ColorOptions>
         {colorOptions.map((option) => (
-          <div
+          <ColorBox
             key={option.color}
-            className={`${styles.colorBox} ${selectedColor === option.color ? styles.selected : ''}`}
-            style={{ backgroundColor: option.color }}
+            color={option.color}
+            selected={selectedColor === option.color}
             onClick={() => setSelectedColor(option.color)}
           />
         ))}
-      </div>
-    </div>
+      </ColorOptions>
+    </Container>
   );
 };
 

@@ -12,6 +12,7 @@ import {
   EmojiDropDown,
   ButtonWrapper,
   EmojiSelector,
+  ShareDropdownMenu,
 } from './MessageStatusBar.style';
 import ProfileImages from '../../common/ProfileImages';
 import Reactions from '../../common/Reactions';
@@ -25,6 +26,8 @@ function MessageStatusBarPresenter({
   isEmojiPickerVisible,
   toggleEmojiPicker,
   onEmojiClick,
+  isShareDropdownVisible,
+  toggleShareDropdown,
 }) {
   return (
     <StatusBarContainer>
@@ -57,7 +60,7 @@ function MessageStatusBarPresenter({
                 추가
               </Button>
             </ButtonWrapper>
-            <Button size="36" variant="outlined">
+            <Button size="36" variant="outlined" onClick={toggleShareDropdown}>
               <img src={shareButton} alt="공유 버튼" />
             </Button>
           </StatusBarSectionWrapperRight>
@@ -68,6 +71,16 @@ function MessageStatusBarPresenter({
           <EmojiSelector>
             <EmojiPicker onEmojiClick={onEmojiClick} />
           </EmojiSelector>
+        )}
+
+        {/* 공유 드롭다운 메뉴 */}
+        {isShareDropdownVisible && (
+          <ShareDropdownMenu className="text-base">
+            <ul>
+              <li>카카오톡 공유</li>
+              <li>URL 공유</li>
+            </ul>
+          </ShareDropdownMenu>
         )}
       </StatusBarWrapper>
     </StatusBarContainer>

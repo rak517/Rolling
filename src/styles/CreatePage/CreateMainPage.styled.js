@@ -1,26 +1,26 @@
+//메인페이지 스타일 정의 코드
 
-//메인 페이지 스타일
+import styled from 'styled-components';
 
-
-.container {
+export const Container = styled.div`
   padding: 24px;
   max-width: 720px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
+`;
 
-.header {
+export const Header = styled.header`
   display: flex;
   justify-content: flex-start;
-}
+`;
 
-.logoButton {
+export const LogoButton = styled.button`
   font-size: 24px;
   font-weight: bold;
   background: none;
   border: none;
   color: #9935ff;
   cursor: pointer;
-}
+`;

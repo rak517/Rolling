@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../../components/layout/Header';
 import Button from '../../components/ui/Button';
-import mockData from '../../data/mockData.json';
 import useResponsive from '../../hooks/useResponsive';
 import useCarousel from '../../hooks/useCarousel';
 import {
@@ -12,25 +11,32 @@ import {
 } from './ListPage.styles';
 import CarouselContainer from './CarouselContainer';
 
-function ListPage() {
+function ListPagePresenter({ popularPapers, recentPapers, loading, error }) {
   const cardsToShow = 4;
   const isMobile = useResponsive(1248);
 
-  // 상단 캐러셀
   const {
     currentIndex: currentIndexTop,
     maxIndex: maxIndexTop,
     handleNext: handleNextTop,
     handlePrev: handlePrevTop,
-  } = useCarousel(mockData.length, cardsToShow);
+  } = useCarousel(popularPapers?.length || 0, cardsToShow);
 
-  // 하단 캐러셀
   const {
     currentIndex: currentIndexBottom,
     maxIndex: maxIndexBottom,
     handleNext: handleNextBottom,
     handlePrev: handlePrevBottom,
-  } = useCarousel(mockData.length, cardsToShow);
+  } = useCarousel(recentPapers?.length || 0, cardsToShow);
+
+  // 로딩 상태 처리
+  if (loading) return <div>로딩 중...</div>;
+
+  // 에러 상태 처리
+  if (error) return <div>{error}</div>;
+
+  // 데이터가 없는 경우 처리
+  if (!popularPapers || !recentPapers) return <div>데이터가 없습니다.</div>;
 
   return (
     <>
@@ -40,7 +46,7 @@ function ListPage() {
           <h2 className="text-xl font-bold">인기 롤링 페이퍼 🔥</h2>
           <ListSection>
             <CarouselContainer
-              data={mockData}
+              data={popularPapers}
               isMobile={isMobile}
               currentIndex={currentIndexTop}
               handlePrev={handlePrevTop}
@@ -55,7 +61,7 @@ function ListPage() {
           <h2 className="text-xl font-bold">최근에 만든 롤링 페이퍼 ⭐️️</h2>
           <ListSection>
             <CarouselContainer
-              data={mockData}
+              data={recentPapers}
               isMobile={isMobile}
               currentIndex={currentIndexBottom}
               handlePrev={handlePrevBottom}
@@ -80,4 +86,4 @@ function ListPage() {
   );
 }
 
-export default ListPage;
+export default ListPagePresenter;

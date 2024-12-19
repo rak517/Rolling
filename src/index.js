@@ -4,7 +4,7 @@ import './styles/global.css';
 import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import ListPage from './pages/ListPage/ListPage';
+import ListPageContainer from './pages/ListPage/ListPageContainer';
 import CreatePage from './pages/CreatePage/CreatePage';
 import DetailPage from './pages/DetailPage/DetailPage';
 import EditPage from './pages/EditPage/EditPage';
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'list',
-        element: <ListPage />,
+        element: <ListPageContainer />,
       },
       {
         path: 'post',

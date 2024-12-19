@@ -1,3 +1,4 @@
+import EmojiPicker from 'emoji-picker-react';
 import {
   StatusBarContainer,
   StatusBarWrapper,
@@ -10,6 +11,7 @@ import {
   MessageCount,
   EmojiDropDown,
   ButtonWrapper,
+  EmojiSelector,
 } from './MessageStatusBar.style';
 import ProfileImages from '../../common/ProfileImages';
 import Reactions from '../../common/Reactions';
@@ -18,7 +20,12 @@ import Button from '../../ui/Button';
 import buttonIcon from '../../../assets/icons/button-icon.svg';
 import shareButton from '../../../assets/icons/share-button.svg';
 
-function MessageStatusBarPresenter({ data }) {
+function MessageStatusBarPresenter({
+  data,
+  isEmojiPickerVisible,
+  toggleEmojiPicker,
+  onEmojiClick,
+}) {
   return (
     <StatusBarContainer>
       <StatusBarWrapper>
@@ -40,7 +47,12 @@ function MessageStatusBarPresenter({ data }) {
               <img src={errow_down} alt="이모지 드롭다운" />
             </ReactionsWrapper>
             <ButtonWrapper>
-              <Button size="36" variant="outlined" className="text-base">
+              <Button
+                size="36"
+                variant="outlined"
+                className="text-base"
+                onClick={toggleEmojiPicker}
+              >
                 <EmojiDropDown src={buttonIcon} alt="추가 버튼" />
                 추가
               </Button>
@@ -50,6 +62,13 @@ function MessageStatusBarPresenter({ data }) {
             </Button>
           </StatusBarSectionWrapperRight>
         </StatusBarSection>
+
+        {/* 이모지 선택 창 */}
+        {isEmojiPickerVisible && (
+          <EmojiSelector>
+            <EmojiPicker onEmojiClick={onEmojiClick} />
+          </EmojiSelector>
+        )}
       </StatusBarWrapper>
     </StatusBarContainer>
   );

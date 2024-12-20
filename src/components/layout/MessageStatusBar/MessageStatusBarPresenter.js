@@ -34,6 +34,8 @@ function MessageStatusBarPresenter({
   recipients,
   isAllEmojisVisible,
   toggleAllEmojis,
+  handleKakaoShare,
+  handleURLShare,
 }) {
   return (
     <StatusBarContainer>
@@ -93,8 +95,8 @@ function MessageStatusBarPresenter({
         {isShareDropdownVisible && (
           <ShareDropdownMenu className="text-base">
             <ul>
-              <li>카카오톡 공유</li>
-              <li>URL 공유</li>
+              <li onClick={handleKakaoShare}>카카오톡 공유</li>
+              <li onClick={handleURLShare}>URL 공유</li>
             </ul>
           </ShareDropdownMenu>
         )}

@@ -5,6 +5,7 @@ import { HttpException } from '../../../utils/exceptions';
 import fetchRecipientReactions from '../../../api/DetailPage/fetchRecipientReactions';
 import fetchRecipientsById from '../../../api/DetailPage/fetchRecipientsById';
 import fetchAddReaction from '../../../api/DetailPage/fetchAddReaction';
+import useKakaoShare from '../../../hooks/useKakaoShare';
 
 function MessageStatusBarContainer() {
   const { id } = useParams();
@@ -16,6 +17,26 @@ function MessageStatusBarContainer() {
   const [isEmojiPickerVisible, setEmojiPickerVisible] = useState(false);
   const [isShareDropdownVisible, setShareDropdownVisible] = useState(false);
   const [isAllEmojisVisible, setAllEmojisVisible] = useState(false);
+
+  const { shareToKakao } = useKakaoShare();
+
+  // 카카오톡 공유 핸들러
+  const handleKakaoShare = useCallback(() => {
+    shareToKakao();
+  }, [shareToKakao]);
+
+  // URL 공유 핸들러
+  const handleURLShare = useCallback(() => {
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => {
+        alert('URL이 클립보드에 복사되었습니다!');
+      })
+      .catch((err) => {
+        console.error('URL 복사 실패:', err);
+        alert('URL 복사에 실패했습니다.');
+      });
+  }, []);
 
   const getReactionsById = async () => {
     try {
@@ -113,6 +134,8 @@ function MessageStatusBarContainer() {
       toggleShareDropdown={toggleShareDropdown}
       isAllEmojisVisible={isAllEmojisVisible}
       toggleAllEmojis={toggleAllEmojis}
+      handleKakaoShare={handleKakaoShare}
+      handleURLShare={handleURLShare}
     />
   );
 }

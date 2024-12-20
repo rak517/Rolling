@@ -91,10 +91,15 @@ export const StatusBarSectionWrapperRight = styled.div`
 
 export const ReactionsWrapper = styled.div`
   display: flex;
+`;
 
-  img {
-    margin-left: 0.8rem;
-  }
+export const AllEmojiButton = styled.img`
+  margin-left: 0.8rem;
+
+  transition: transform 0.3s ease;
+  transform: ${({ isRotated }) =>
+    isRotated ? 'rotate(180deg)' : 'rotate(0deg)'};
+  cursor: pointer; /* 클릭 가능함을 나타내기 위해 커서를 포인터로 변경 */
 `;
 
 export const MessageCount = styled.p`
@@ -125,6 +130,19 @@ export const EmojiSelector = styled.div`
   right: 9rem;
   z-index: 1000;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const ShareDropdownMenu = styled.div`
@@ -137,6 +155,7 @@ export const ShareDropdownMenu = styled.div`
   color: var(--gray-900);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  animation: fadeIn 0.3s ease;
 
   ul {
     list-style: none;
@@ -150,6 +169,45 @@ export const ShareDropdownMenu = styled.div`
       &:hover {
         background-color: var(--gray-100);
       }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+export const AllEmojiDropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 16rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 0.8rem;
+  border: 0.1rem solid #b6b6b6;
+  border-radius: 0.8rem;
+  padding: 2.4rem;
+  background-color: var(--white);
+  gap: 1rem;
+  z-index: 1000;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 `;

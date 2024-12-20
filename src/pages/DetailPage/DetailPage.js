@@ -36,7 +36,7 @@ function DetailPage() {
           />
         </DetailPageCardContainer>
       </DetailPageContainer>
-      {selectedCard && <Modal card={selectedCard} onClose={closeModal} />}]
+      {selectedCard && <Modal card={selectedCard} onClose={closeModal} />}
     </>
   );
 }

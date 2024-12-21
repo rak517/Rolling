@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Heading, ToggleContainer, ToggleButton } from './BackgroundSection.styled';
+import { Container, Heading, ToggleContainer, ToggleButton } from '../../styles/CreatePage/BackgroundSection.styled';
 import ColorOptions from './ColorOptions';
 import ImageOptions from './ImageOptions';
 
 const BackgroundSection = ({ selectedColor, setSelectedColor, selectedImage, setSelectedImage }) => {
   const [activeTab, setActiveTab] = useState('color'); // 'color' or 'image'
+
   return (
     <Container>
       <Heading>배경화면을 선택해 주세요.</Heading>

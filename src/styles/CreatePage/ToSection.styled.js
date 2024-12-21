@@ -1,5 +1,3 @@
-//To.섹션 스타일 정의 코드
-
 import styled from 'styled-components';
 
 export const Container = styled.div`

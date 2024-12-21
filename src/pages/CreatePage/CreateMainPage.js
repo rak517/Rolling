@@ -1,15 +1,13 @@
-
-//메인 페이지 컴포넌트
-
+//메인페이지 컴포넌트 로직 코드
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './CreatePage.module.scss';
+import { Container, Header, LogoButton } from './CreatePage.styled';
 import ToSection from './components/ToSection';
 import BackgroundSection from './components/BackgroundSection';
 import CreateButton from './components/CreateButton';
 
-const CreatePage = () => {
+const CreateMainPage = () => {
   const navigate = useNavigate();
   const [toValue, setToValue] = useState('');
   const [error, setError] = useState(false);
@@ -26,29 +24,16 @@ const CreatePage = () => {
     }
   };
 
-  // 프롭스 객체로 묶기
-  const toSectionProps = { toValue, setToValue, error, handleBlur };
-  const backgroundSectionProps = { selectedColor, setSelectedColor };
-
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <button 
-          className={styles.logoButton} 
-          onClick={() => navigate('/')}
-        >
-          Rolling
-        </button>
-      </header>
-
-      <ToSection {...toSectionProps} />
-      <BackgroundSection {...backgroundSectionProps} />
-      <CreateButton 
-        disabled={!toValue.trim()} 
-        handleClick={handleCreate} 
-      />
-    </div>
+    <Container>
+      <Header>
+        <LogoButton onClick={() => navigate('/')}>Rolling</LogoButton>
+      </Header>
+      <ToSection toValue={toValue} setToValue={setToValue} error={error} handleBlur={handleBlur} />
+      <BackgroundSection selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
+      <CreateButton disabled={!toValue.trim()} handleClick={handleCreate} />
+    </Container>
   );
 };
 
-export default CreatePage;
+export default CreateMainPage;

@@ -1,5 +1,10 @@
 import React from 'react';
-import { Container, Heading, Input, ErrorMessage } from './ToSection.styled';
+import {
+  Container,
+  Heading,
+  Input,
+  ErrorMessage,
+} from '../../styles/CreatePage/ToSection.styled';
 
 const ToSection = ({ toValue, setToValue, error, handleBlur }) => {
   return (

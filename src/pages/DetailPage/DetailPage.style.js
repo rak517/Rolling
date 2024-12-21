@@ -56,7 +56,7 @@ export const DetailPageCardContainer = styled.div`
 
 export const DetailPageCard = styled.div`
   width: 38.4rem;
-  height: 28rem;
+  height: auto; //height: 28rem;
   border-radius: 1.6rem;
   display: flex;
   flex-direction: column;

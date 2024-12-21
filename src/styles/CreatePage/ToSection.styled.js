@@ -17,6 +17,8 @@ export const Input = styled.input`
   padding: 12px 16px;
   border: 1px solid ${({ error }) => (error ? 'red' : '#cccccc')};
   border-radius: 8px;
+  font-size: 16px;
+  color: #555555;
 `;
 
 export const ErrorMessage = styled.p`

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageGrid, ImageBox } from './BackgroundSection.styled';
+import { ImageGrid, ImageBox } from '../../styles/CreatePage/BackgroundSection.styled';
 
 const imageOptions = [
   { url: 'https://s3-alpha-sig.figma.com/img/16cd/1b46/e5a1c8c110aa1788a682f388bef979a4?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VU7Bk3pH8nF7P7IOLYarvLqv~V-G94juaYT-~SdLqI1zY5qlxO9ufV8-l4Mxabm65o2qeMwsNHZpj-HdyHhgaueBkwRo8aKw5udGaBgpRC4HpnMj-IPEGczdNuNBm5XmEsjhZ2nNTYrijysahsFDnpJqdOq9FWgqR-0NHftTYjWZPgyiDVkvttMJvFwFzEwT1rBLrp9X8mnc6B5trSfMcRKyr-k-pFN1ICo7B2eg2n707ZkLRSXliGUzLphagvr27ibKDne~Rhd96W0zP3~0hWnGlsGaoBynIBnqsJC4uSuEuo-xXg0kD6pcwZr1TZzIkV~-2ue4O-Mx7NvaGzSZsQ__', label: '이미지 1' },

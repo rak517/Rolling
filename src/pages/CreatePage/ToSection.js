@@ -1,5 +1,3 @@
-//To.섹션 컴포넌트 로직 코드
-
 import React from 'react';
 import {
   Container,

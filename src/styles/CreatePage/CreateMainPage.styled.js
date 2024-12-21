@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '../../components/ui/Button';
 
 export const Container = styled.div`
   padding: 24px;
@@ -21,4 +22,8 @@ export const LogoButton = styled.button`
   border: none;
   color: #9935ff;
   cursor: pointer;
+`;
+
+export const CreateButton = styled(Button)`
+  width: 100%;
 `;

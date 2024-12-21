@@ -15,6 +15,7 @@ import {
   ShareDropdownMenu,
   AllEmojiButton,
   AllEmojiDropdown,
+  ButtonText,
 } from './MessageStatusBar.style';
 import ProfileImages from '../../common/ProfileImages';
 import Reactions from '../../common/Reactions';

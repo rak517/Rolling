@@ -41,7 +41,7 @@ export const DetailPageCardContainer = styled.div`
   flex-wrap: wrap;
   gap: 2.4rem;
   position: relative;
-  margin-top: 18px;
+  margin-top: 11px;
 
   @media (max-width: 1248px) {
     width: calc(100% - 4.8rem);

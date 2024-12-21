@@ -47,7 +47,7 @@ function EditPage() {
       <MessageStatusBarContainer />
       <DetailPageContainer {...backgroundStyle}>
         <DetailPageEditBtnContainer>
-          <EditPageAllDeleteButton />
+          <EditPageAllDeleteButton recipientId={id} />
         </DetailPageEditBtnContainer>
         <DetailPageCardContainer>
           <EditPageCards

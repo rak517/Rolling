@@ -11,13 +11,12 @@ import {
   EditPageCardText,
   EditPageCardProfileWhoFrom,
   EditPageCardProfileWhoRelation,
-  EditPageCardDelete,
 } from './EditPageCrads.style';
 import cardBtn from '../../assets/icons/cardBtn.png';
-import deleteBtn from '../../assets/icons/delete-btn.png';
 import Realtion from '../DetailPage/CardRealtion';
+import EditPageMessageDeleteButton from './EditPageMessageDeleteBtn';
 
-function EditPageCards({ id, cardData, onCardClick }) {
+function EditPageCards({ id, cardData, onDeleteSuccess }) {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const formattedDate = date.toLocaleDateString('ko-KR');
@@ -30,7 +29,7 @@ function EditPageCards({ id, cardData, onCardClick }) {
         <img src={cardBtn} alt="" />
       </EditPageCardCreateBtn>
       {cardData.map((card) => (
-        <EditPageCard key={card.id} onClick={() => onCardClick(card)}>
+        <EditPageCard key={card.id}>
           <EditPageCardProfile>
             <EditPageCardProfileImg>
               <EditPageCardProfileImgImage
@@ -48,9 +47,10 @@ function EditPageCards({ id, cardData, onCardClick }) {
               </EditPageCardProfileWhoRelation>
             </EditPageCardProfileWho>
           </EditPageCardProfile>
-          <EditPageCardDelete>
-            <img src={deleteBtn} alt="" />
-          </EditPageCardDelete>
+          <EditPageMessageDeleteButton
+            messageId={card.id} // 각 카드의 ID를 Delete 버튼에 전달
+            onDeleteSuccess={onDeleteSuccess}
+          />
 
           <EditPageCardTextContainer>
             <EditPageCardText>

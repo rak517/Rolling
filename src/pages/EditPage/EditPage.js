@@ -2,8 +2,7 @@ import Header from '../../components/layout/Header';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import fetchRecipientById from '../../api/DetailPage/fetchRecipientsById';
-import EditPageEditButton from './EditPageEditButton';
-import Modal from '../DetailPage/DetaiPageModal';
+import EditPageAllDeleteButton from './EditPageAllDeleteButton';
 import EditPageCards from './EditPageCards';
 import {
   DetailPageContainer,
@@ -14,18 +13,9 @@ import MessageStatusBarContainer from '../../components/layout/MessageStatusBar/
 
 function EditPage() {
   const { id } = useParams();
-  const [selectedCard, setSelectedCard] = useState(null);
   const [recipientData, setRecipientData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const handleCardClick = (card) => {
-    setSelectedCard(card);
-  };
-
-  const closeModal = () => {
-    setSelectedCard(null);
-  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,17 +47,15 @@ function EditPage() {
       <MessageStatusBarContainer />
       <DetailPageContainer {...backgroundStyle}>
         <DetailPageEditBtnContainer>
-          <EditPageEditButton />
+          <EditPageAllDeleteButton />
         </DetailPageEditBtnContainer>
         <DetailPageCardContainer>
           <EditPageCards
             id={id}
             cardData={recipientData?.recentMessages || []}
-            onCardClick={handleCardClick}
           />
         </DetailPageCardContainer>
       </DetailPageContainer>
-      {selectedCard && <Modal card={selectedCard} onClose={closeModal} />}
     </>
   );
 }

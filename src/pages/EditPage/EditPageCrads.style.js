@@ -141,7 +141,7 @@ export const EditPageCardProfileWhoRelation = styled.div`
   height: 2rem;
 `;
 
-export const EditPageCardDelete = styled.div`
+export const EditPageCardDelete = styled.button`
   width: 4rem;
   height: 4rem;
   top: 2.8rem;
@@ -152,4 +152,9 @@ export const EditPageCardDelete = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+
+  &:active {
+    background-color: red;
+  }
 `;

@@ -6,6 +6,7 @@ import fetchRecipientReactions from '../../../api/DetailPage/fetchRecipientReact
 import fetchRecipientsById from '../../../api/DetailPage/fetchRecipientsById';
 import fetchAddReaction from '../../../api/DetailPage/fetchAddReaction';
 import useKakaoShare from '../../../hooks/useKakaoShare';
+import ToastContainer from '../../common/Toast';
 
 function MessageStatusBarContainer() {
   const { id } = useParams();
@@ -21,20 +22,24 @@ function MessageStatusBarContainer() {
   const { shareToKakao } = useKakaoShare();
 
   // 카카오톡 공유 핸들러
-  const handleKakaoShare = useCallback(() => {
-    shareToKakao();
-  }, [shareToKakao]);
+  const handleKakaoShare = useCallback(
+    (addToast) => {
+      shareToKakao();
+      addToast('카카오톡으로 공유되었습니다.', 'success');
+    },
+    [shareToKakao],
+  );
 
   // URL 공유 핸들러
-  const handleURLShare = useCallback(() => {
+  const handleURLShare = useCallback((addToast) => {
     navigator.clipboard
       .writeText(window.location.href)
       .then(() => {
-        alert('URL이 클립보드에 복사되었습니다!');
+        addToast('URL이 클립보드에 복사되었습니다.', 'success');
       })
       .catch((err) => {
         console.error('URL 복사 실패:', err);
-        alert('URL 복사에 실패했습니다.');
+        addToast('URL 복사에 실패했습니다.', 'error');
       });
   }, []);
 
@@ -95,12 +100,13 @@ function MessageStatusBarContainer() {
     setAllEmojisVisible((prev) => !prev);
   }, []);
 
-  const handleEmojiClick = async (emojiObject, event) => {
+  const handleEmojiClick = async (emojiObject, event, addToast) => {
     setEmojiPickerVisible(false);
     const selectedEmoji = emojiObject.emoji;
 
     try {
       await fetchAddReaction(id, selectedEmoji, 'increase');
+      addToast('이모지가 추가되었습니다.', 'success');
     } catch (error) {
       if (error instanceof HttpException) {
         setError(error.message);
@@ -124,19 +130,25 @@ function MessageStatusBarContainer() {
   }
 
   return (
-    <MessageStatusBarPresenter
-      recipients={recipients}
-      reactions={reactions}
-      isEmojiPickerVisible={isEmojiPickerVisible}
-      toggleEmojiPicker={toggleEmojiPicker}
-      onEmojiClick={handleEmojiClick}
-      isShareDropdownVisible={isShareDropdownVisible}
-      toggleShareDropdown={toggleShareDropdown}
-      isAllEmojisVisible={isAllEmojisVisible}
-      toggleAllEmojis={toggleAllEmojis}
-      handleKakaoShare={handleKakaoShare}
-      handleURLShare={handleURLShare}
-    />
+    <ToastContainer>
+      {({ addToast }) => (
+        <MessageStatusBarPresenter
+          recipients={recipients}
+          reactions={reactions}
+          isEmojiPickerVisible={isEmojiPickerVisible}
+          toggleEmojiPicker={toggleEmojiPicker}
+          onEmojiClick={(emoji, event) =>
+            handleEmojiClick(emoji, event, addToast)
+          }
+          isShareDropdownVisible={isShareDropdownVisible}
+          toggleShareDropdown={toggleShareDropdown}
+          isAllEmojisVisible={isAllEmojisVisible}
+          toggleAllEmojis={toggleAllEmojis}
+          handleKakaoShare={() => handleKakaoShare(addToast)}
+          handleURLShare={() => handleURLShare(addToast)}
+        />
+      )}
+    </ToastContainer>
   );
 }
 

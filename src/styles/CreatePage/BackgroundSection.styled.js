@@ -27,7 +27,6 @@ export const ToggleButton = styled.button`
   cursor: pointer;
   background: ${(props) => (props.isActive ? '#9935ff' : '#f6f6f6')};
   color: ${(props) => (props.isActive ? '#fff' : '#555')};
-  box-shadow: ${(props) => (props.isActive ? '0px 4px 6px rgba(153, 53, 255, 0.4)' : 'none')};
   transition: background 0.3s, color 0.3s;
 `;
 
@@ -41,9 +40,8 @@ export const ColorBox = styled.div`
   height: 168px;
   border-radius: 16px;
   cursor: pointer;
-  border: ${(props) => (props.isSelected ? '3px solid #9935ff' : '1px solid #ccc')};
+  border: ${(props) => (props.isSelected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)')};
   background-color: ${(props) => props.color};
-  box-shadow: ${(props) => (props.isSelected ? '0px 4px 6px rgba(153, 53, 255, 0.4)' : 'none')};
 `;
 
 export const ImageGrid = styled.div`
@@ -59,26 +57,11 @@ export const ImageBox = styled.div`
   cursor: pointer;
   overflow: hidden;
   border: ${(props) => (props.isSelected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)')};
-  position: relative;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: ${(props) => (props.isSelected ? '0.6' : '1')};
-  }
-
-  &::after {
-    content: ${(props) => (props.isSelected ? "'✔'" : "''")};
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    color: white;
-    display: ${(props) => (props.isSelected ? 'block' : 'none')};
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    padding: 10px;
   }
 `;

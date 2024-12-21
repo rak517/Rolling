@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Heading, ToggleContainer, ToggleButton } from './BackgroundSection.styled';
+import { Container, Heading, ToggleContainer, ToggleButton } from '../../styles/CreatePage/BackgroundSection.styled';
 import ColorOptions from './ColorOptions';
 import ImageOptions from './ImageOptions';
 

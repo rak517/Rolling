@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorGrid, ColorBox } from './BackgroundSection.styled';
+import { ColorGrid, ColorBox } from '../../styles/CreatePage/BackgroundSection.styled';
 
 const colorOptions = [
   { color: '#FFE2AD', label: '베이지' },

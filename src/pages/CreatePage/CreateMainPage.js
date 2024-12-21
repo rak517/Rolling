@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Header, LogoButton } from './CreateMainPage.styled';
+import { Container, Header, LogoButton } from '../../styles/CreatePage/CreateMainPage.styled';
 import ToSection from './ToSection';
 import BackgroundSection from './BackgroundSection';
 import CreateButton from './CreateButton';

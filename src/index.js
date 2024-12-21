@@ -5,7 +5,7 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import ListPageContainer from './pages/ListPage/ListPageContainer';
-import CreatePage from './pages/CreatePage/CreatePage';
+import CreateMainPage from './pages/CreatePage/CreateMainPage';
 import DetailPage from './pages/DetailPage/DetailPage';
 import EditPage from './pages/EditPage/EditPage';
 import SendMessagePage from './pages/SendMessagePage/SendMessagePage';
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'post',
-        element: <CreatePage />,
+        element: <CreateMainPage />,
       },
       {
         path: 'post/:id',

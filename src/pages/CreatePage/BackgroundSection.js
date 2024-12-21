@@ -1,32 +1,29 @@
+import React, { useState } from 'react';
+import { Container, Heading, ToggleContainer, ToggleButton } from '../../styles/CreatePage/BackgroundSection.styled';
+import ColorOptions from './ColorOptions';
+import ImageOptions from './ImageOptions';
 
-//배경 색상 선택 컴포넌트
-
-
-import React from 'react';
-import styles from './BackgroundSection.module.scss';
-
-const BackgroundSection = ({ selectedColor, setSelectedColor }) => {
-  const colorOptions = [
-    { color: '#FFE2AD', label: '베이지' },
-    { color: '#ECD9FF', label: '퍼플' },
-    { color: '#B1E4FF', label: '블루' },
-    { color: '#D0F5C3', label: '그린' },
-  ];
+const BackgroundSection = ({ selectedColor, setSelectedColor, selectedImage, setSelectedImage }) => {
+  const [activeTab, setActiveTab] = useState('color'); // 'color' or 'image'
 
   return (
-    <div className={styles.container}>
-      <h3 className={styles.heading}>배경화면을 선택해 주세요.</h3>
-      <div className={styles.colorOptions}>
-        {colorOptions.map((option) => (
-          <div
-            key={option.color}
-            className={`${styles.colorBox} ${selectedColor === option.color ? styles.selected : ''}`}
-            style={{ backgroundColor: option.color }}
-            onClick={() => setSelectedColor(option.color)}
-          />
-        ))}
-      </div>
-    </div>
+    <Container>
+      <Heading>배경화면을 선택해 주세요.</Heading>
+      <p>컬러를 선택하거나, 이미지를 선택할 수 있습니다.</p>
+      <ToggleContainer>
+        <ToggleButton isActive={activeTab === 'color'} onClick={() => setActiveTab('color')}>
+          컬러
+        </ToggleButton>
+        <ToggleButton isActive={activeTab === 'image'} onClick={() => setActiveTab('image')}>
+          이미지
+        </ToggleButton>
+      </ToggleContainer>
+      {activeTab === 'color' ? (
+        <ColorOptions selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
+      ) : (
+        <ImageOptions selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
+      )}
+    </Container>
   );
 };
 

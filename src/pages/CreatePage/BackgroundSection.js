@@ -1,7 +1,12 @@
 //배경색상선택 컴포넌트 로직 코드
 
 import React from 'react';
-import { Container, Heading, ColorOptions, ColorBox } from './BackgroundSection.styled';
+import {
+  Container,
+  Heading,
+  ColorOptions,
+  ColorBox,
+} from '../../styles/CreatePage/BackgroundSection.styled';
 
 const BackgroundSection = ({ selectedColor, setSelectedColor }) => {
   const colorOptions = [

@@ -1,7 +1,12 @@
 //To.섹션 컴포넌트 로직 코드
 
 import React from 'react';
-import { Container, Heading, Input, ErrorMessage } from './ToSection.styled';
+import {
+  Container,
+  Heading,
+  Input,
+  ErrorMessage,
+} from '../../styles/CreatePage/ToSection.styled';
 
 const ToSection = ({ toValue, setToValue, error, handleBlur }) => {
   return (

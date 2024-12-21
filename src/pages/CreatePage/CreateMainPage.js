@@ -2,10 +2,14 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Header, LogoButton } from './CreatePage.styled';
-import ToSection from './components/ToSection';
-import BackgroundSection from './components/BackgroundSection';
-import CreateButton from './components/CreateButton';
+import {
+  Container,
+  Header,
+  LogoButton,
+} from '../../styles/CreatePage/CreateMainPage.styled';
+import ToSection from './ToSection';
+import BackgroundSection from './BackgroundSection';
+import CreateButton from './CreateButton';
 
 const CreateMainPage = () => {
   const navigate = useNavigate();
@@ -29,8 +33,16 @@ const CreateMainPage = () => {
       <Header>
         <LogoButton onClick={() => navigate('/')}>Rolling</LogoButton>
       </Header>
-      <ToSection toValue={toValue} setToValue={setToValue} error={error} handleBlur={handleBlur} />
-      <BackgroundSection selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
+      <ToSection
+        toValue={toValue}
+        setToValue={setToValue}
+        error={error}
+        handleBlur={handleBlur}
+      />
+      <BackgroundSection
+        selectedColor={selectedColor}
+        setSelectedColor={setSelectedColor}
+      />
       <CreateButton disabled={!toValue.trim()} handleClick={handleCreate} />
     </Container>
   );

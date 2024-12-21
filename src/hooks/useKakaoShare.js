@@ -2,28 +2,9 @@ import { useEffect } from 'react';
 
 const useKakaoShare = () => {
   useEffect(() => {
-    if (!window.Kakao) {
-      const script = document.createElement('script');
-      script.src = 'https://developers.kakao.com/sdk/js/kakao.min.js';
-      script.async = true;
-
-      script.onload = () => {
-        if (window.Kakao && !window.Kakao.isInitialized()) {
-          window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-          console.log('Kakao SDK initialized');
-        }
-      };
-
-      document.body.appendChild(script);
-
-      return () => {
-        document.body.removeChild(script);
-      };
-    } else {
-      if (!window.Kakao.isInitialized()) {
-        window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-        console.log('Kakao SDK initialized');
-      }
+    if (window.Kakao && !window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
+      console.log('Kakao SDK initialized');
     }
   }, []);
 

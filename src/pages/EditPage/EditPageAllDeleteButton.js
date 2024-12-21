@@ -7,7 +7,7 @@ import { DetailPageEditBtn } from '../DetailPage/DetailPage.style';
 // 반면, 개별 카드에 있는 쓰레기통 버튼은 롤링페이퍼의 주인 + 작성자
 // 이 두명의 id를 확인해서 둘 중 하나의 id면 삭제할 수 있게 하는 것이 좋아보입니다.
 
-function EditPageEditButton({ id }) {
+function EditPageAllDeleteButton({ id }) {
   return (
     <Link to={`/post/${id}/edit`}>
       <DetailPageEditBtn size={40} variant="primary" fullWidth={92}>
@@ -17,4 +17,4 @@ function EditPageEditButton({ id }) {
   );
 }
 
-export default EditPageEditButton;
+export default EditPageAllDeleteButton;

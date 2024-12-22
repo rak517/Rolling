@@ -17,6 +17,10 @@ const EmojiCardWrapper = styled.div`
     width: 1.6rem;
     height: 2.1rem;
   }
+
+  @media (max-width: 768px) {
+    max-width: 5.5rem;
+  }
 `;
 
 function EmojiCard({ emoji, count }) {

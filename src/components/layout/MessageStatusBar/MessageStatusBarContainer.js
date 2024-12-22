@@ -1,5 +1,5 @@
 import MessageStatusBarPresenter from './MessageStatusBarPresenter';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { HttpException } from '../../../utils/exceptions';
 import fetchRecipientReactions from '../../../api/DetailPage/fetchRecipientReactions';
@@ -7,6 +7,7 @@ import fetchRecipientsById from '../../../api/DetailPage/fetchRecipientsById';
 import fetchAddReaction from '../../../api/DetailPage/fetchAddReaction';
 import useKakaoShare from '../../../hooks/useKakaoShare';
 import ToastContainer from '../../common/Toast';
+import useOutsideClick from '../../../hooks/useOutsideClick';
 
 function MessageStatusBarContainer() {
   const { id } = useParams();
@@ -20,6 +21,10 @@ function MessageStatusBarContainer() {
   const [isAllEmojisVisible, setAllEmojisVisible] = useState(false);
 
   const { shareToKakao } = useKakaoShare();
+
+  const emojiPickerRef = useRef(null);
+  const shareDropdownRef = useRef(null);
+  const allEmojiDropdownRef = useRef(null);
 
   // 카카오톡 공유 핸들러
   const handleKakaoShare = useCallback(
@@ -100,6 +105,23 @@ function MessageStatusBarContainer() {
     setAllEmojisVisible((prev) => !prev);
   }, []);
 
+  const closeDropdowns = useCallback(() => {
+    if (isEmojiPickerVisible) toggleEmojiPicker();
+    if (isShareDropdownVisible) toggleShareDropdown();
+    if (isAllEmojisVisible) toggleAllEmojis();
+  }, [
+    isEmojiPickerVisible,
+    isShareDropdownVisible,
+    isAllEmojisVisible,
+    toggleEmojiPicker,
+    toggleShareDropdown,
+    toggleAllEmojis,
+  ]);
+
+  useOutsideClick(emojiPickerRef, closeDropdowns);
+  useOutsideClick(shareDropdownRef, closeDropdowns);
+  useOutsideClick(allEmojiDropdownRef, closeDropdowns);
+
   const handleEmojiClick = async (emojiObject, event, addToast) => {
     setEmojiPickerVisible(false);
     const selectedEmoji = emojiObject.emoji;
@@ -146,6 +168,9 @@ function MessageStatusBarContainer() {
           toggleAllEmojis={toggleAllEmojis}
           handleKakaoShare={() => handleKakaoShare(addToast)}
           handleURLShare={() => handleURLShare(addToast)}
+          emojiPickerRef={emojiPickerRef}
+          shareDropdownRef={shareDropdownRef}
+          allEmojiDropdownRef={allEmojiDropdownRef}
         />
       )}
     </ToastContainer>

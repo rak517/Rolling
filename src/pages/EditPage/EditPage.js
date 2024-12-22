@@ -10,18 +10,23 @@ import {
   DetailPageEditBtnContainer,
 } from '../DetailPage/DetailPage.style';
 import MessageStatusBarContainer from '../../components/layout/MessageStatusBar/MessageStatusBarContainer';
+import fetchMessagesForRecipient from '../../api/DetailPage/fetchMessagesForRecipient';
 
 function EditPage() {
   const { id } = useParams();
   const [recipientData, setRecipientData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const recipient = await fetchRecipientById(id);
         setRecipientData({ ...recipient });
+        const allMessages = await fetchMessagesForRecipient(id); // 메세지 데이터 가져오기
+        setMessages(allMessages.results || []); // 메세지 목록 저장
+
         setError(null);
       } catch (error) {
         setError(error.message);
@@ -50,10 +55,7 @@ function EditPage() {
           <EditPageAllDeleteButton recipientId={id} />
         </DetailPageEditBtnContainer>
         <DetailPageCardContainer>
-          <EditPageCards
-            id={id}
-            cardData={recipientData?.recentMessages || []}
-          />
+          <EditPageCards id={id} cardData={messages || []} />
         </DetailPageCardContainer>
       </DetailPageContainer>
     </>

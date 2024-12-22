@@ -11,6 +11,10 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    display: none; /* 모바일 화면에서는 모달 오버레이 숨기기 */
+  }
 `;
 
 export const ModalContent = styled.div`
@@ -18,12 +22,18 @@ export const ModalContent = styled.div`
   border-radius: 1.6rem;
   width: 60rem;
   height: 47.6rem;
-  position: relative;
-  top: 28rem;
+  position: absolute;
+  top: 8.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
+  left: 50%;
+  transform: translateX(-50%);
   align-items: center;
+
+  @media (max-width: 1248px) {
+    top: 5rem;
+  }
 `;
 
 export const ModalBtn = styled(Button)`

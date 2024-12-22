@@ -11,11 +11,17 @@ import {
   DetailPageCardText,
   DetailPageCardProfileWhoFrom,
   DetailPageCardProfileWhoRelation,
-} from './DetailPage.style';
+} from './DetailPageCards.style';
 import cardBtn from '../../assets/icons/cardBtn.png';
 import Realtion from './CardRealtion';
 
 function DetailPageCards({ id, cardData, onCardClick }) {
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const formattedDate = date.toLocaleDateString('ko-KR');
+    return formattedDate.slice(0, -1); // 마지막 '.'을 제거
+  };
+
   return (
     <>
       <DetailPageCardCreateBtn to={`/post/${id}/message`}>
@@ -25,25 +31,30 @@ function DetailPageCards({ id, cardData, onCardClick }) {
         <DetailPageCard key={card.id} onClick={() => onCardClick(card)}>
           <DetailPageCardProfile>
             <DetailPageCardProfileImg>
-              <DetailPageCardProfileImgImage src={card.imageUrl} />
+              <DetailPageCardProfileImgImage
+                src={card.profileImageURL}
+                alt="Profile"
+              />
             </DetailPageCardProfileImg>
             <DetailPageCardProfileWho>
               <DetailPageCardProfileWhoFrom>
                 <p className="text-xl font-regular">From.</p>
-                <p className="text-xl font-bold">{card.name}</p>
+                <p className="text-xl font-bold">{card.sender}</p>{' '}
               </DetailPageCardProfileWhoFrom>
               <DetailPageCardProfileWhoRelation>
-                <Realtion relation={card.relation} />
+                <Realtion relation={card.relationship} />
               </DetailPageCardProfileWhoRelation>
             </DetailPageCardProfileWho>
           </DetailPageCardProfile>
           <DetailPageCardTextContainer>
             <DetailPageCardText>
-              <p className="text-lg font-regular">{card.text}</p>
+              <p className="text-lg font-regular">{card.content}</p>
             </DetailPageCardText>
           </DetailPageCardTextContainer>
           <DetailPageCardDate>
-            <p className="text-2xs font-regular">{card.date}</p>
+            <p className="text-2xs font-regular">
+              {formatDate(card.createdAt)}
+            </p>
           </DetailPageCardDate>
         </DetailPageCard>
       ))}

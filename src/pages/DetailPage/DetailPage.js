@@ -1,6 +1,7 @@
 import Header from '../../components/layout/Header';
-import React, { useState } from 'react';
-import { id, cardData } from './DetailPageData';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import fetchRecipientById from '../../api/DetailPage/fetchRecipientsById';
 import DetailPageEditButton from './DetailPageEditButton';
 import Modal from './DetaiPageModal';
 import DetailPageCards from './DetailPageCards';
@@ -12,26 +13,56 @@ import {
 import MessageStatusBarContainer from '../../components/layout/MessageStatusBar/MessageStatusBarContainer';
 
 function DetailPage() {
+  const { id } = useParams();
   const [selectedCard, setSelectedCard] = useState(null);
+  const [recipientData, setRecipientData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const handleCardClick = (card) => {
-    setSelectedCard(card); // 클릭한 카드 정보 저장
+    setSelectedCard(card);
   };
+
   const closeModal = () => {
-    setSelectedCard(null); // 모달 닫을 때 카드 정보 초기화
+    setSelectedCard(null);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const recipient = await fetchRecipientById(id);
+        setRecipientData({ ...recipient });
+        setError(null);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  const backgroundStyle = {
+    $backgroundColor: recipientData?.backgroundColor || 'blue',
+    $backgroundImageURL: recipientData?.backgroundImageURL || null,
   };
 
   return (
     <>
       <Header />
       <MessageStatusBarContainer />
-      <DetailPageContainer>
+      <DetailPageContainer {...backgroundStyle}>
         <DetailPageEditBtnContainer>
-          <DetailPageEditButton />
+          <DetailPageEditButton id={id} />
         </DetailPageEditBtnContainer>
         <DetailPageCardContainer>
           <DetailPageCards
             id={id}
-            cardData={cardData}
+            cardData={recipientData?.recentMessages || []}
             onCardClick={handleCardClick}
           />
         </DetailPageCardContainer>

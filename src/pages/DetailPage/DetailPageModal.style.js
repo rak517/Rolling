@@ -54,6 +54,7 @@ export const ModalContentHeaderDate = styled.div`
   margin-top: 5.6rem;
   margin-right: 3.9rem;
   color: var(--gray-500);
+  white-space: nowrap; /* 줄 바꿈 방지 */
 `;
 
 export const ModalContentTextContainer = styled.div`

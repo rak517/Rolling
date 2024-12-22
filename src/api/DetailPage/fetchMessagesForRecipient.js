@@ -3,10 +3,14 @@ import { HttpException } from '../../utils/exceptions';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const fetchRecipientById = async (recipientsId) => {
+const fetchMessagesForRecipient = async (
+  recipientId,
+  limit = 100,
+  offset = 0,
+) => {
   try {
     const response = await fetch(
-      `${BASE_URL}/recipients/${recipientsId}/?limit=5&offset=0`,
+      `${BASE_URL}/recipients/${recipientId}/messages/?limit=${limit}&offset=${offset}`,
       {
         method: 'GET',
         headers: {
@@ -33,4 +37,4 @@ const fetchRecipientById = async (recipientsId) => {
   }
 };
 
-export default fetchRecipientById;
+export default fetchMessagesForRecipient;

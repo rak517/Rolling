@@ -19,7 +19,8 @@ export const StatusBarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 120rem;
+  width: 100%;
+  max-width: 120rem;
 
   @media (max-width: 1248px) {
     width: 100%;
@@ -85,15 +86,18 @@ export const StatusBarSectionWrapperRight = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    padding: 1.2rem 2.4rem;
+    padding: 1.2rem 0.4rem;
   }
 `;
 
 export const ReactionsWrapper = styled.div`
   display: flex;
+  min-width: 6rem;
 `;
 
 export const AllEmojiButton = styled.img`
+  width: 2.4rem;
+  height: 3.7rem;
   margin-left: 0.8rem;
 
   transition: transform 0.3s ease;
@@ -108,6 +112,10 @@ export const MessageCount = styled.p`
 
 export const EmojiDropDown = styled.img`
   margin-right: 0.4rem;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -142,6 +150,11 @@ export const EmojiSelector = styled.div`
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @media (max-width: 768px) {
+    top: 100%;
+    right: 0.5rem;
   }
 `;
 
@@ -209,5 +222,16 @@ export const AllEmojiDropdown = styled.div`
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @media (max-width: 768px) {
+    top: 90%;
+    right: 5rem;
+  }
+`;
+
+export const AddText = styled.span`
+  @media (max-width: 768px) {
+    display: none;
   }
 `;

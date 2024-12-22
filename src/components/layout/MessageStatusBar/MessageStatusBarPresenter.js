@@ -15,6 +15,7 @@ import {
   ShareDropdownMenu,
   AllEmojiButton,
   AllEmojiDropdown,
+  AddText,
 } from './MessageStatusBar.style';
 import ProfileImages from '../../common/ProfileImages';
 import Reactions from '../../common/Reactions';
@@ -36,6 +37,9 @@ function MessageStatusBarPresenter({
   toggleAllEmojis,
   handleKakaoShare,
   handleURLShare,
+  emojiPickerRef,
+  shareDropdownRef,
+  allEmojiDropdownRef,
 }) {
   return (
     <StatusBarContainer>
@@ -75,7 +79,7 @@ function MessageStatusBarPresenter({
                 onClick={toggleEmojiPicker}
               >
                 <EmojiDropDown src={buttonIcon} alt="추가 버튼" />
-                추가
+                <AddText>추가</AddText>
               </Button>
             </ButtonWrapper>
             <Button size="36" variant="outlined" onClick={toggleShareDropdown}>
@@ -86,14 +90,14 @@ function MessageStatusBarPresenter({
 
         {/* 이모지 선택 창 */}
         {isEmojiPickerVisible && (
-          <EmojiSelector>
+          <EmojiSelector ref={emojiPickerRef}>
             <EmojiPicker onEmojiClick={onEmojiClick} />
           </EmojiSelector>
         )}
 
         {/* 공유 드롭다운 메뉴 */}
         {isShareDropdownVisible && (
-          <ShareDropdownMenu className="text-base">
+          <ShareDropdownMenu ref={shareDropdownRef} className="text-base">
             <ul>
               <li onClick={handleKakaoShare}>카카오톡 공유</li>
               <li onClick={handleURLShare}>URL 공유</li>
@@ -102,7 +106,7 @@ function MessageStatusBarPresenter({
         )}
 
         {isAllEmojisVisible && (
-          <AllEmojiDropdown>
+          <AllEmojiDropdown ref={allEmojiDropdownRef}>
             {reactions.map((reaction) => (
               <EmojiCard
                 key={reaction.id}

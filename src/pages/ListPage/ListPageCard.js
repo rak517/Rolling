@@ -1,7 +1,9 @@
+import React from 'react';
 import styled from 'styled-components';
 import ProfileImages from '../../components/common/ProfileImages';
 import Reactions from '../../components/common/Reactions';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import useDrag from '../../hooks/useDrag';
 
 const Card = styled.div`
   position: relative; /* 오버레이 겹치기 위해 */
@@ -14,7 +16,8 @@ const Card = styled.div`
   width: 27.5rem;
   height: 26rem;
   overflow: hidden;
-  cursor: pointer;
+  cursor: ${(props) => (props.isDragging ? 'grabbing' : 'pointer')};
+  user-select: none; /* 텍스트 선택 방지 */
 
   /* 배경 이미지와 색상 설정 */
   background-color: ${(props) =>
@@ -62,6 +65,23 @@ const Card = styled.div`
     );
     pointer-events: none;
   }
+
+  /* 드래그 중일 때 오버레이 추가 */
+  ${(props) =>
+    props.isDragging &&
+    `
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      pointer-events: none;
+      transition: background 0.3s ease;
+    }
+  `}
 `;
 
 const CardWrapper = styled.div`
@@ -84,45 +104,64 @@ const MessageCount = styled.p`
   z-index: 0;
 `;
 
-const StyledLink = styled(Link)`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-decoration: none;
-`;
-
 const EmojiSection = styled.div``;
 
 function ListPageCard({ data }) {
+  const navigate = useNavigate();
+  const {
+    isDragging,
+    didDrag,
+    handlePointerDown,
+    handlePointerMove,
+    handlePointerUp,
+  } = useDrag(10);
+
+  // 클릭 시 드래그 여부에 따라 링크 이동 제어
+  const handleClick = (e) => {
+    if (didDrag) {
+      e.preventDefault();
+      return;
+    }
+    navigate(`/post/${data.id}`);
+  };
+
   return (
-    <StyledLink to={`/post/${data.id}`}>
-      <Card
-        $backgroundColor={data.backgroundColor}
-        $backgroundImageURL={data.backgroundImageURL}
-      >
-        <CardWrapper>
-          <CardTitle
-            className="text-2xl font-bold"
-            $backgroundImageURL={data.backgroundImageURL}
-          >
-            To. {data.name}
-          </CardTitle>
-          <ProfileImages
-            recentMessages={data.recentMessages}
-            $backgroundImageURL={data.backgroundImageURL}
-          />
-          <MessageCount
-            className="text-base"
-            $backgroundImageURL={data.backgroundImageURL}
-          >
-            <strong>{data.messageCount}</strong>명이 작성했어요!
-          </MessageCount>
-        </CardWrapper>
-        <EmojiSection>
-          <Reactions topReactions={data.topReactions}></Reactions>
-        </EmojiSection>
-      </Card>
-    </StyledLink>
+    <Card
+      $backgroundColor={data.backgroundColor}
+      $backgroundImageURL={data.backgroundImageURL}
+      isDragging={isDragging}
+      onMouseDown={handlePointerDown}
+      onMouseMove={handlePointerMove}
+      onMouseUp={handlePointerUp}
+      onMouseLeave={handlePointerUp}
+      onTouchStart={handlePointerDown}
+      onTouchMove={handlePointerMove}
+      onTouchEnd={handlePointerUp}
+      onTouchCancel={handlePointerUp}
+      onClick={handleClick}
+    >
+      <CardWrapper>
+        <CardTitle
+          className="text-2xl font-bold"
+          $backgroundImageURL={data.backgroundImageURL}
+        >
+          To. {data.name}
+        </CardTitle>
+        <ProfileImages
+          recentMessages={data.recentMessages}
+          $backgroundImageURL={data.backgroundImageURL}
+        />
+        <MessageCount
+          className="text-base"
+          $backgroundImageURL={data.backgroundImageURL}
+        >
+          <strong>{data.messageCount}</strong>명이 작성했어요!
+        </MessageCount>
+      </CardWrapper>
+      <EmojiSection>
+        <Reactions topReactions={data.topReactions}></Reactions>
+      </EmojiSection>
+    </Card>
   );
 }
 

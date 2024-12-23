@@ -1,10 +1,10 @@
-import React from 'react';
-import { HeaderContainer, LogoButton } from '../../styles/SendMessagePage/Header.styled';
+import styled from 'styled-components';
 
-const Header = ({ navigate }) => (
-  <HeaderContainer>
-    <LogoButton onClick={() => navigate('/')}>Rolling</LogoButton>
-  </HeaderContainer>
-);
-
-export default Header;
+export const Container = styled.div`
+  padding: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+`;

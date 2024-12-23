@@ -1,10 +1,24 @@
-import React from 'react';
-import { HeaderContainer, LogoButton } from '../../styles/SendMessagePage/Header.styled';
+import styled from 'styled-components';
 
-const Header = ({ navigate }) => (
-  <HeaderContainer>
-    <LogoButton onClick={() => navigate('/')}>Rolling</LogoButton>
-  </HeaderContainer>
-);
+export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
 
-export default Header;
+export const SectionHeading = styled.h3`
+  font-size: 24px;
+  font-weight: 700;
+  color: #181818;
+`;
+
+export const TextArea = styled.textarea`
+  width: 100%;
+  height: 260px;
+  padding: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #181818;
+  resize: none;
+`;

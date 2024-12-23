@@ -27,7 +27,9 @@ export const ToggleButton = styled.button`
   cursor: pointer;
   background: ${(props) => (props.isActive ? '#9935ff' : '#f6f6f6')};
   color: ${(props) => (props.isActive ? '#fff' : '#555')};
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 `;
 
 export const ColorGrid = styled.div`
@@ -40,13 +42,13 @@ export const ColorBox = styled.div`
   height: 168px;
   border-radius: 16px;
   cursor: pointer;
-  border: ${(props) => (props.isSelected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)')};
+  border: ${(props) =>
+    props.isSelected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)'};
   background-color: ${(props) => props.color};
 `;
 
 export const ImageGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex; // flex로 수정
   gap: 16px;
 `;
 
@@ -56,7 +58,8 @@ export const ImageBox = styled.div`
   border-radius: 16px;
   cursor: pointer;
   overflow: hidden;
-  border: ${(props) => (props.isSelected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)')};
+  border: ${(props) =>
+    props.isSelected ? '3px solid #9935ff' : '1px solid rgba(0, 0, 0, 0.08)'};
 
   img {
     width: 100%;

@@ -1,82 +1,88 @@
-
-
 <div align="center">
-
-<!-- logo -->
-
 
 ### Rolling 전통적인 롤링페이퍼 문화를 웹으로 구현한 커뮤니티형 플랫폼 🖍️
 
 [<img src="https://img.shields.io/badge/프로젝트 기간-2024.12.10~2024.12.27-fab2ac?style=flat&logo=&logoColor=white" />]()
 
-</div> 
+</div>
 
 ## 📝 소개
 
-프로젝트 소개 ~~
+사용자는 친구나 동료들과 따뜻한 메시지를 주고받으며, 이를 통해
+CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
 
+이 프로젝트에서는 롤링페이퍼의 생성, 수정, 삭제뿐만 아니라 이모지 반응 기능을 추가해 감정 표현을 더 풍부하게 할 수 있습니다.
 
-- 프로젝트 소개
-- 프로젝트 화면 구성
-- 사용한 기술 스택
-- 컨벤션
-- 역할분담 및 프로젝트 팀원
-- 후기
-
-+ 추가적으로 넣거나 지우고 싶은내용 ... 
+또한, 모달, 토스트와 같은 UI 요소를 활용하고, 글 입력에 외부 라이브러리를 적용해 사용자 경험을 개선할 수 있습니다
 
 <br />
 
 ### 화면 구성
-<table>
-  <tr>
-    <td align="center">
-      <strong>메인 페이지</strong><br/>
-      <img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="450"/>
-      <p>화면에 대한 설명을 입력합니다.</p>
-    </td>
-    <td align="center">
-      <strong>메인 페이지</strong><br/>
-      <img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="450"/>
-      <p>화면에 대한 설명을 입력합니다.</p>
-    </td>
-   
-  </tr>
-  <tr>
-    <td align="center">
-      <strong>메인 페이지</strong><br/>
-      <img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="450"/>
-      <p>화면에 대한 설명을 입력합니다.</p>
-    </td>
-    <td align="center">
-      <strong>메인 페이지</strong><br/>
-      <img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="450"/>
-      <p>화면에 대한 설명을 입력합니다.</p>
-    </td>
-  </tr>
-</table>
+
+<div style="overflow-x: auto;">
+  <table style="white-space: nowrap;">
+    <tr>
+      <td align="center">
+        <strong>메인 페이지</strong><br/>
+        <img src="../Rolling/src/assets/images/mainPage.gif" width="450"/>
+        <p>롤링페이퍼 리스트 조회</p>
+      </td>
+      <td align="center">
+        <strong>디테일 페이지</strong><br/>
+        <img src="../Rolling/src/assets/images/messageCheck.gif" width="450"/>
+        <p>롤링 페이퍼 메시지 조회</p>
+      </td>
+      <td align="center">
+        <strong>디테일 페이지</strong><br/>
+        <img src="../Rolling/src/assets/images/deleteRollinng.gif" width="450"/>
+        <p>롤링 페이퍼 삭제 기능</p>
+      </td>
+      <td align="center">
+        <strong>디테일 페이지</strong><br/>
+        <img src="../Rolling/src/assets/images/deleteMessage.gif" width="450"/>
+        <p>메세지 삭제 기능</p>
+      </td>
+      <td align="center">
+        <strong>디테일 페이지</strong><br/>
+        <img src="../Rolling/src/assets/images/emoji.gif" width="450"/>
+        <p>이모지 추가 기능</p>
+      </td>
+      <td align="center">
+        <strong>디테일 페이지</strong><br/>
+        <img src="../Rolling/src/assets/images/kakaoUrl.gif"width="450"/>
+        <p>url 공유 및 카카오톡 공유 기능</p>
+      </td>
+      <td align="center">
+        <strong>생성 페이지</strong><br/>
+        <img src="../Rolling/src/assets/images/createRolling.gif" width="450"/>
+        <p>롤링 페이퍼 생성 기능</p>
+      </td>
+    </tr> 
+  </table>
+</div>
 
 <br />
 
 ## ⚙ 기술 스택
 
 ### Front-end
+
 <div>
 <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/JavaScript.png?raw=true" width="80">
 <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/React.png?raw=true" width="80">
 <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/HTMLCSS.png?raw=true" width="80">
 <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/StyledComponents.png?raw=true" width="80">
 
- 
 </div>
 
 ### Infra
+
 <div>
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/AWSEC2.png?raw=true" width="80">
-// 지우고 VERCEL? 
+<img src="./src/assets//icons/vercel.png" width="80">
 </div>
 
 ### Tools
+
 <div>
 <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Github.png?raw=true" width="80">
 <img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Notion.png?raw=true" width="80">
@@ -86,35 +92,39 @@
 
 <br />
 
-## 🤔 컨벤션 ~ 
-- aabbbccㅇ임시
+## ✏️ 컨벤션
 
+- vercel
 
 <br />
 
-## 🤔 역할분담
+## 🖥️ 역할분담
+
 - 팀장 최성락
-    - 각자 뭘 한지 ~~
+  - Main page, List Page 섹션 담당 - [롤링페이퍼] 조회 및 스크롤 처리
+  - 공통 UI 제작, api-env처리, 이모지 및 카카오톡 url 공유처리 구현
+  - 프로젝트 기초 셋팅 (eslint, husky, 파일구조)
 - 팀원 강동욱
-    - 작성 해주시면
+
+  - CreatePage 섹션 담당 - [메세지, 롤링 페이퍼] CREATE 구현
+
 - 팀원 정재형
-    - 좋을 거 같아요 
-
-
+  - DetailPage 섹션 담당 - [메세지] 조회, 모달 구현
+  - EditPage 섹션 담당 - [메세지, 롤링페이퍼] DELETE 구현,
 
 <br />
 
 ## 💁‍♂️ 프로젝트 팀원
-|팀장|팀원|팀원|
-|:---:|:---:|:---:|
-| <img src="https://github.com/rak517.png" alt="팀원1" style="width: 120px; height: 120px;"/> | <img src="https://github.com/ko777y.png" alt="팀원1" style="width: 120px; height: 120px;"/> |<img src="https://github.com/jaehyeongjung.png" alt="팀원1" style="width: 120px; height: 120px;"/> |
-|[최성락](https://github.com/rak517)|[강동욱](https://github.com/ko777y)|[정재형](https://github.com/jaehyeongjung)|
+
+|                                            팀장                                             |                                            팀원                                             |                                                팀원                                                |
+| :-----------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/rak517.png" alt="팀원1" style="width: 120px; height: 120px;"/> | <img src="https://github.com/ko777y.png" alt="팀원1" style="width: 120px; height: 120px;"/> | <img src="https://github.com/jaehyeongjung.png" alt="팀원1" style="width: 120px; height: 120px;"/> |
+|                             [최성락](https://github.com/rak517)                             |                             [강동욱](https://github.com/ko777y)                             |                             [정재형](https://github.com/jaehyeongjung)                             |
 
 <br />
 
-## 💁‍♂️ 후기 
+## 💁‍♂️ 후기
 
-
-후기는 각자 링크달면 깔끔해 보이긴할거같아요 
-어떤거를 이용하면 좋을까요? 
-
+후기는 각자 링크달면 깔끔해 보이긴할거같아요
+어떤거를 이용하면 좋을까요?
+or 마크다운 파일로 깃허브에 파일추가하는것도 좋아보입니다.

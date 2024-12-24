@@ -24,37 +24,37 @@ CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
     <tr>
       <td align="center">
         <strong>메인 페이지</strong><br/>
-        <img src="../Rolling/src/assets/images/mainPage.gif" width="450"/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/mainPage.gif" width="450"/>
         <p>롤링페이퍼 리스트 조회</p>
       </td>
       <td align="center">
         <strong>디테일 페이지</strong><br/>
-        <img src="../Rolling/src/assets/images/messageCheck.gif" width="450"/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/messageCheck.gif" width="450"/>
         <p>롤링 페이퍼 메시지 조회</p>
       </td>
       <td align="center">
         <strong>디테일 페이지</strong><br/>
-        <img src="../Rolling/src/assets/images/deleteRollinng.gif" width="450"/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/deleteRollinng.gif" width="450"/>
         <p>롤링 페이퍼 삭제 기능</p>
       </td>
       <td align="center">
         <strong>디테일 페이지</strong><br/>
-        <img src="../Rolling/src/assets/images/deleteMessage.gif" width="450"/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/deleteMessage.gif" width="450"/>
         <p>메세지 삭제 기능</p>
       </td>
       <td align="center">
         <strong>디테일 페이지</strong><br/>
-        <img src="../Rolling/src/assets/images/emoji.gif" width="450"/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/emoji.gif" width="450"/>
         <p>이모지 추가 기능</p>
       </td>
       <td align="center">
         <strong>디테일 페이지</strong><br/>
-        <img src="../Rolling/src/assets/images/kakaoUrl.gif"width="450"/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/kakaoUrl.gif"width="450"/>
         <p>url 공유 및 카카오톡 공유 기능</p>
       </td>
       <td align="center">
         <strong>생성 페이지</strong><br/>
-        <img src="../Rolling/src/assets/images/createRolling.gif" width="450"/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/createRolling.gif" width="450"/>
         <p>롤링 페이퍼 생성 기능</p>
       </td>
     </tr> 

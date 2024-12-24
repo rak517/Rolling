@@ -12,17 +12,13 @@ import sendMessage from '../../api/SendMessagePage/sendMessage';
 
 const SendMessagePage = () => {
   const navigate = useNavigate();
-
-  // URL 파라미터에서 recipientId를 가져옵니다.
-  const { id } = useParams(); // id가 recipientId로 사용됨
-  console.log('recipientId:', id); // recipientId를 콘솔에 출력하여 확인
-
+  const { id } = useParams();
   const [fromValue, setFromValue] = useState('');
   const [relationship, setRelationship] = useState('지인');
   const [font, setFont] = useState('Noto Sans');
   const [messageContent, setMessageContent] = useState('');
   const [profileImage, setProfileImage] = useState(
-    'https://your-default-image-url.com/default-image.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaaJm0XjU003rv43s5vdv0r-rUMqur61vcDg&s', // default
   );
 
   const [error, setError] = useState(false);
@@ -32,34 +28,34 @@ const SendMessagePage = () => {
   };
 
   const handleCreate = async () => {
+    console.log('보내는 데이터 확인:', {
+      id,
+      fromValue,
+      profileImage,
+      relationship,
+      messageContent,
+      font,
+    }); // 데이터 확인
+
     if (fromValue.trim() && messageContent.trim() && profileImage && id) {
-      // id는 URL에서 가져온 recipientId
       try {
-        // 메시지 생성 함수 호출, id는 URL에서 가져온 값
         const response = await sendMessage(
-          id, // URL에서 가져온 recipientId (id가 실제로 recipientId)
-          fromValue, // 보낸 사람 이름
-          profileImage, // 프로필 이미지 URL
-          relationship, // 관계 (친구, 지인 등)
-          messageContent, // 메시지 내용
-          font, // 폰트
+          id,
+          fromValue,
+          profileImage,
+          relationship,
+          messageContent,
+          font,
         );
 
         console.log('메시지 생성 성공:', response);
 
-        // 성공 시, 메시지 페이지로 이동
-        navigate(`/post/${response.id}`);
+        navigate(`/post/${response.recipientId}`);
       } catch (error) {
         console.error('메시지 생성 실패:', error);
       }
     } else {
       setError(true);
-    }
-  };
-
-  const handleImageUpload = (e) => {
-    if (e.target.files[0]) {
-      setProfileImage(URL.createObjectURL(e.target.files[0]));
     }
   };
 
@@ -75,7 +71,7 @@ const SendMessagePage = () => {
         />
         <ProfileImageSection
           profileImage={profileImage}
-          handleImageUpload={handleImageUpload}
+          setProfileImage={setProfileImage} // 이 부분 추가
         />
         <RelationshipSection
           relationship={relationship}

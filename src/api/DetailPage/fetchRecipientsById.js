@@ -15,6 +15,8 @@ const fetchRecipientById = async (recipientsId) => {
       },
     );
 
+    console.log('Response Status:', response.status); // 응답 상태 코드 확인
+
     if (!response.ok) {
       handleResponseError(response);
     }

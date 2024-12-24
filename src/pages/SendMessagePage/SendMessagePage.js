@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
+import Header from '../../components/layout/Header';
 import FromSection from './FromSection';
 import ProfileImageSection from './ProfileImageSection';
 import RelationshipSection from './RelationshipSection';
 import MessageContentSection from './MessageContentSection';
 import FontSelectionSection from './FontSelectionSection';
 import CreateButton from './CreateButton';
-import { Container } from '../../styles/SendMessagePage/MessageForm.styled';
+import { Container } from '../../styles/SendMessagePage/SendMessagePage.styled';
 
-const MessageForm = () => {
+const SendMessagePage = () => {
   const navigate = useNavigate();
   const [fromValue, setFromValue] = useState('');
   const [relationship, setRelationship] = useState('지인');
@@ -36,16 +36,35 @@ const MessageForm = () => {
   };
 
   return (
-    <Container>
+    <>
       <Header navigate={navigate} />
-      <FromSection fromValue={fromValue} setFromValue={setFromValue} error={error} handleBlur={handleBlur} />
-      <ProfileImageSection profileImage={profileImage} handleImageUpload={handleImageUpload} />
-      <RelationshipSection relationship={relationship} setRelationship={setRelationship} />
-      <MessageContentSection messageContent={messageContent} setMessageContent={setMessageContent} />
-      <FontSelectionSection font={font} setFont={setFont} />
-      <CreateButton handleClick={handleCreate} disabled={!fromValue.trim() || !messageContent.trim()} />
-    </Container>
+      <Container>
+        <FromSection
+          fromValue={fromValue}
+          setFromValue={setFromValue}
+          error={error}
+          handleBlur={handleBlur}
+        />
+        <ProfileImageSection
+          profileImage={profileImage}
+          handleImageUpload={handleImageUpload}
+        />
+        <RelationshipSection
+          relationship={relationship}
+          setRelationship={setRelationship}
+        />
+        <MessageContentSection
+          messageContent={messageContent}
+          setMessageContent={setMessageContent}
+        />
+        <FontSelectionSection font={font} setFont={setFont} />
+        <CreateButton
+          handleClick={handleCreate}
+          disabled={!fromValue.trim() || !messageContent.trim()}
+        />
+      </Container>
+    </>
   );
 };
 
-export default MessageForm;
+export default SendMessagePage;

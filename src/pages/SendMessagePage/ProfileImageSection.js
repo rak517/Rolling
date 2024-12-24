@@ -1,5 +1,10 @@
 import React from 'react';
-import { Section, SectionHeading, ProfileContainer, ProfileBox } from '../../styles/SendMessagePage/ProfileImageSection.styled';
+import {
+  Section,
+  SectionHeading,
+  ProfileContainer,
+  ProfileBox,
+} from '../../styles/SendMessagePage/ProfileImageSection.styled';
 
 const ProfileImageSection = ({ profileImage, setProfileImage }) => {
   const imageLinks = [

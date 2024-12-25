@@ -51,8 +51,10 @@ function DetailPage() {
   if (error) return <div>Error: {error}</div>;
 
   const backgroundStyle = {
-    $backgroundColor: recipientData?.backgroundColor || 'blue',
-    $backgroundImageURL: recipientData?.backgroundImageURL || null,
+    $backgroundColor: recipientData?.backgroundImageURL
+      ? null
+      : recipientData?.backgroundColor || 'blue', // 이미지가 있으면 배경색은 null
+    $backgroundImageURL: recipientData?.backgroundImageURL || null, // 이미지가 있으면 URL을 배경으로
   };
 
   return (

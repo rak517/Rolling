@@ -14,11 +14,11 @@ const imageOptions = [
     label: '이미지 2',
   },
   {
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCVTLTNryT-8vJMh6mp-N9vCsrXP7RO5ymw&s',
+    url: 'https://cdn.pixabay.com/photo/2017/09/16/15/49/sea-2755858_1280.jpg',
     label: '이미지 3',
   },
   {
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyJYBaRWoG6vzN83qe3KmXyYsJvN1TWff-8w&s',
+    url: 'https://cdn.pixabay.com/photo/2023/06/04/23/09/desert-8041046_1280.jpg',
     label: '이미지 4',
   },
 ];

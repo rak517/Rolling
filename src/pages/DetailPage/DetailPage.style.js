@@ -30,6 +30,9 @@ export const DetailPageContainer = styled.div`
           blue: 'var(--blue-200)', // blue일 경우
           beige: 'var(--beige-200)', // beige일 경우
         }[props.$backgroundColor] || 'var(--blue-200)'};
+
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const DetailPageCardContainer = styled.div`

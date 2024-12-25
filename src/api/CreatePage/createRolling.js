@@ -3,14 +3,22 @@ import { HttpException } from '../../utils/exceptions';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const createRolling = async (name, backgroundColor) => {
+const createRolling = async (name, backgroundColor, backgroundImageURL) => {
   try {
+    console.log('name:', name);
+    console.log('backgroundColor:', backgroundColor);
+    console.log('backgroundImageURL:', backgroundImageURL); // backgroundImage 값 확인
+
     const response = await fetch(`${BASE_URL}/recipients/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, backgroundColor }),
+      body: JSON.stringify({
+        name,
+        backgroundColor,
+        backgroundImageURL, // 이미지 선택 시 해당 값 전송, 아니면 null
+      }),
     });
 
     if (!response.ok) {

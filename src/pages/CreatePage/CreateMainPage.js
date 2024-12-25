@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Container,
-  LogoButton,
   CreateButton,
 } from '../../styles/CreatePage/CreateMainPage.styled';
 import ToSection from './ToSection';
@@ -23,9 +22,7 @@ const CreateMainPage = () => {
   };
 
   const handleCreate = async () => {
-    if (!toValue.trim() || (!selectedColor && !selectedImage)) return;
-
-    // api 보내기 위한 색상 매핑
+    // 유효한 배경색 매핑
     const colorMapping = {
       '#FFE2AD': 'beige',
       '#ECD9FF': 'purple',
@@ -33,30 +30,38 @@ const CreateMainPage = () => {
       '#D0F5C3': 'green',
     };
 
+    // 선택된 색상에 맞는 값을 API에서 요구하는 형식으로 변환
     const apiColor = colorMapping[selectedColor];
+    const apiImage = selectedImage ? selectedImage : null; // 이미지가 선택되지 않으면 null
 
-    // 유효한 색상인지 확인
-    if (!apiColor) {
-      alert('유효하지 않은 배경색입니다.');
-      return; // 색상이 유효하지 않으면 함수 종료
-    }
+    // 상태 값 확인
+    console.log('선택된 색상:', selectedColor);
+    console.log('선택된 이미지:', selectedImage);
 
-    setIsLoading(true); // API 로딩 상태 활성화
+    if (!toValue.trim() || !apiColor) return; // 이름과 색상이 유효한지 확인
+
+    setIsLoading(true); // 로딩 상태 활성화
 
     try {
-      const response = await createRolling(toValue, apiColor);
+      // 수정된 createRolling 호출: name, backgroundColor, backgroundImage
+      const response = await createRolling(toValue, apiColor, apiImage);
 
-      // API 응답이 성공적이고 생성된 ID가 존재하면 해당 페이지로 이동
       if (response && response.id) {
         navigate(`/post/${response.id}`);
       }
     } catch (error) {
-      console.error('생성 실패:', error.message);
-      alert('생성에 실패했습니다. 다시 시도해주세요.');
+      console.error(error);
+      alert('생성에 실패했습니다.');
     } finally {
-      setIsLoading(false);
+      setIsLoading(false); // 로딩 상태 비활성화
     }
   };
+
+  useEffect(() => {
+    // 상태 변경 후 로그로 확인
+    console.log('현재 색상:', selectedColor);
+    console.log('현재 이미지:', selectedImage);
+  }, [selectedColor, selectedImage]);
 
   return (
     <>

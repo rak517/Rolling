@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '../../components/ui/Button';
+import { Link } from 'react-router-dom';
 
 export const DetailPageContainer = styled.div`
   width: 100%;
@@ -20,17 +21,15 @@ export const DetailPageContainer = styled.div`
         }[props.$backgroundColor] || 'var(--blue-200)'}; // 기본값: blue
 
   /* 배경 이미지 설정 */
-  background-image: ${(props) =>
+  background: ${(props) =>
     props.$backgroundImageURL
       ? `url("${props.$backgroundImageURL}")`
-      : `url(${
-          {
-            purple: '/assets/images/purple-bg.svg',
-            green: '/assets/images/green-bg.svg',
-            blue: '/assets/images/blue-bg.svg',
-            beige: '/assets/images/beige-bg.svg',
-          }[props.$backgroundColor] || 'none'
-        })`};
+      : {
+          purple: 'var(--purple-200)', // purple일 경우
+          green: 'var(--green-200)', // green일 경우
+          blue: 'var(--blue-200)', // blue일 경우
+          beige: 'var(--beige-200)', // beige일 경우
+        }[props.$backgroundColor] || 'var(--blue-200)'};
 `;
 
 export const DetailPageCardContainer = styled.div`
@@ -51,6 +50,10 @@ export const DetailPageCardContainer = styled.div`
     width: calc(100% - 4.8rem);
     flex-direction: column;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
 
 export const DetailPageEditBtn = styled(Button)`

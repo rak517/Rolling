@@ -8,7 +8,7 @@ import ListPageContainer from './pages/ListPage/ListPageContainer';
 import CreateMainPage from './pages/CreatePage/CreateMainPage';
 import DetailPage from './pages/DetailPage/DetailPage';
 import EditPage from './pages/EditPage/EditPage';
-// import SendMessagePage from './pages/SendMessagePage/SendMessagePage';
+import SendMessagePage from './pages/SendMessagePage/SendMessagePage';
 import MainPage from './pages/MainPage/MainPage';
 
 const router = createBrowserRouter([
@@ -36,10 +36,10 @@ const router = createBrowserRouter([
         path: 'post/:id/edit',
         element: <EditPage />,
       },
-      // {
-      //   path: 'post/:id/message',
-      //   element: <SendMessagePage />,
-      // },
+      {
+        path: 'post/:id/message',
+        element: <SendMessagePage />,
+      },
     ],
   },
 ]);

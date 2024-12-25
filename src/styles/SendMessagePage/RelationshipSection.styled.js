@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Section = styled.div`
+// 'relationship' prop을 HTML DOM에 전달하지 않도록 필터링
+export const Section = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'relationship', // relationship을 필터링
+})`
   display: flex;
   flex-direction: column;
   gap: 12px;

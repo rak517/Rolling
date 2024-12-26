@@ -57,6 +57,11 @@ CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
         <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/createRolling.gif" width="450"/>
         <p>롤링 페이퍼 생성 기능</p>
       </td>
+      <td align="center">
+        <strong>생성 페이지</strong><br/>
+        <img src="https://github.com/rak517/Rolling/blob/dev/src/assets/images/createMessage.gif" width="450"/>
+        <p>메세지 생성 기능</p>
+      </td>
     </tr> 
   </table>
 </div>
@@ -94,7 +99,9 @@ CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
 
 ## ✏️ 컨벤션
 
-- vercel
+- 커밋 메세지 - commitlint
+- 코드 - eslint, prettier 
+- 스타일 가이드 - vercel style guide (Next.js의 개발사로서, React와 최적화된 생태계를 제공해서 결정)
 
 <br />
 
@@ -123,8 +130,3 @@ CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
 
 <br />
 
-## 💁‍♂️ 후기
-
-후기는 각자 링크달면 깔끔해 보이긴할거같아요
-어떤거를 이용하면 좋을까요?
-or 마크다운 파일로 깃허브에 파일추가하는것도 좋아보입니다.

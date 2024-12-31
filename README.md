@@ -68,6 +68,23 @@ CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
 
 <br />
 
+## 🚀 시작하기
+
+1. 의존성 설치
+
+- `npm install`
+
+- 📦 프로젝트에서 필요한 패키지를 설치합니다.
+
+2. 로컬 서버 실행
+
+- `npm start`
+- 🖥️ 애플리케이션을 로컬 환경에서 실행합니다.
+
+- 브라우저에서 http://localhost:3000으로 접속하세요.
+
+<br />
+
 ## ⚙ 기술 스택
 
 ### Front-end
@@ -100,10 +117,11 @@ CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
 ## ✏️ 컨벤션
 
 - 커밋 메세지 - commitlint
-- 코드 - eslint, prettier 
+- 코드 - eslint, prettier
 - 스타일 가이드 - vercel style guide (Next.js의 개발사로서, React와 최적화된 생태계를 제공해서 결정)
-
-<br />
+- 추가적인 branch, commit 컨벤션의 내용은 다음 노션 링크에 있습니다.
+  - https://lateral-curio-672.notion.site/15882b823a34816ca175f2a8a0d1d54d
+    <br />
 
 ## 🖥️ 역할분담
 
@@ -130,7 +148,6 @@ CRUD(Create, Read, Update, Delete) 기능을 직접 경험하게 됩니다.
 
 <br />
 
-
-
 ## 🔗 배포링크
+
 https://rolling-swart.vercel.app/
